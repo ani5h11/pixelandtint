@@ -1,0 +1,8 @@
+
+{
+  "name": "Pixel & Tint",
+  "description": "A premium, high-end window tinting website for Launceston, Tasmania, featuring advanced scroll-based animations, sleek automotive-inspired design, and SEO optimization.",
+  "requestFramePermissions": [
+    "geolocation"
+  ]
+}
