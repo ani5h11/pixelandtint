@@ -76,7 +76,7 @@ const FAQPreview: React.FC = () => {
 
                     <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden group">
                         <img
-                            src="./assets/whitecar.png"
+                            src="/assets/whitecar.png"
                             alt="Window Tinting Process"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                         />

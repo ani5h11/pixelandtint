@@ -11,7 +11,7 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
               {/* <Shield className="w-8 h-8 text-brightBlue" /> */}
-              <img src="./assets/mainLogo.png" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
+              <img src="/assets/mainLogo.png" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
               <span className="text-2xl font-bold tracking-tight uppercase">
                 PIXEL & <span className="text-brightBlue">TINT</span>
               </span>

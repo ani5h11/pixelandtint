@@ -97,7 +97,7 @@ const Navbar: React.FC = () => {
 
             <div className="w-14 h-14 flex items-center justify-center font-black text-sm bg-white/5 backdrop-blur-md group-hover:scale-110 transition-transform">
               {/* {isHomePage ? activeSection : 'FAQ'} */}
-              <img src="./assets/mainLogo.png" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
+              <img src="/assets/mainLogo.png" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
             </div>
             <div className="flex flex-col">
               <div className="flex items-center gap-2">

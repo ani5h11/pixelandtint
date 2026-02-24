@@ -51,7 +51,7 @@ const Hero: React.FC = () => {
             className="absolute inset-0 z-0 transition-transform duration-75 ease-out"
             style={{
               transform: `scale(${bgScale})`,
-              backgroundImage: `url('./assets/heroimage.jpg')`,
+              backgroundImage: `url('/assets/heroimage.jpg')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}

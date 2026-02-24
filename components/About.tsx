@@ -123,7 +123,7 @@ const About: React.FC = () => {
                 <div className="relative group w-[500px]">
                   <div className="bg-white p-3 shadow-[0_50px_100px_-20px_rgba(5,14,60,0.15)] border border-navy/5 rounded-lg overflow-hidden">
                     <img
-                      src="./assets/consultation.jpg"
+                      src="/assets/consultation.jpg"
                       alt="Consultation and preparation of tint"
                       className="w-full object-cover aspect-[4/3] group-hover:scale-110 transition-transform duration-1000"
                       loading="lazy"
@@ -144,7 +144,7 @@ const About: React.FC = () => {
                 <div className="relative group w-[500px]">
                   <div className="bg-white p-3 shadow-[0_50px_100px_-20px_rgba(5,14,60,0.15)] border border-navy/5 rounded-lg overflow-hidden">
                     <img
-                      src="./assets/custom.jpg"
+                      src="/assets/custom.jpg"
                       alt="Custom tint"
                       className="w-full object-cover aspect-[4/3] group-hover:scale-110 transition-transform duration-1000"
                       loading="lazy"
@@ -165,7 +165,7 @@ const About: React.FC = () => {
                 <div className="relative group w-[550px]">
                   <div className="bg-white p-3 shadow-[0_50px_100px_-20px_rgba(5,14,60,0.15)] border border-navy/5 rounded-lg overflow-hidden">
                     <img
-                      src="./assets/inspection.jpg"
+                      src="/assets/inspection.jpg"
                       alt="Inspection of tint"
                       className="w-full object-cover aspect-[16/9] group-hover:scale-110 transition-transform duration-1000"
                       loading="lazy"
