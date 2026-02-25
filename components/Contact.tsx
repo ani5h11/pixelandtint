@@ -11,7 +11,9 @@ const Contact: React.FC = () => {
     phone: '',
     service: 'Automotive Tinting',
     vehicleMake: '',
-    vehicleModelYear: '',
+    vehicleModel: '',
+    vehicleYear: '',
+    filmType: 'Ceramic',
     message: ''
   });
 
@@ -52,7 +54,9 @@ const Contact: React.FC = () => {
           phone: '',
           service: 'Automotive Tinting',
           vehicleMake: '',
-          vehicleModelYear: '',
+          vehicleModel: '',
+          vehicleYear: '',
+          filmType: 'Ceramic',
           message: ''
         });
       } else {
@@ -208,32 +212,66 @@ const Contact: React.FC = () => {
                     <option value="Residential Tinting" className="bg-navy">Residential Tinting</option>
                   </select>
                 </div>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Make</label>
-                    <input
-                      required
-                      type="text"
-                      name="vehicleMake"
-                      value={formData.vehicleMake}
-                      onChange={handleChange}
-                      placeholder="Toyota"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
-                    />
-                  </div>
-                  <div>
-                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Model and Year</label>
-                    <input
-                      required
-                      type="text"
-                      name="vehicleModelYear"
-                      value={formData.vehicleModelYear}
-                      onChange={handleChange}
-                      placeholder="Camry 2022"
-                      className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
-                    />
-                  </div>
-                </div>
+                {formData.service === 'Automotive Tinting' && (
+                  <>
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Make</label>
+                        <input
+                          required
+                          type="text"
+                          name="vehicleMake"
+                          value={formData.vehicleMake}
+                          onChange={handleChange}
+                          placeholder="Toyota"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Model</label>
+                        <input
+                          required
+                          type="text"
+                          name="vehicleModel"
+                          value={formData.vehicleModel}
+                          onChange={handleChange}
+                          placeholder="Camry"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                        />
+                      </div>
+                    </div>
+
+                    <div className="grid md:grid-cols-2 gap-6">
+                      <div>
+                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Year</label>
+                        <input
+                          required
+                          type="text"
+                          name="vehicleYear"
+                          value={formData.vehicleYear}
+                          onChange={handleChange}
+                          placeholder="2022"
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                        />
+                      </div>
+                      <div>
+                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Film Type</label>
+                        <select
+                          required
+                          name="filmType"
+                          value={formData.filmType}
+                          onChange={handleChange}
+                          className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                        >
+                          <option value="Carbon" className="bg-navy">Carbon</option>
+                          <option value="Ceramic" className="bg-navy">Ceramic</option>
+                          <option value="Nano Ceramic" className="bg-navy">Nano Ceramic</option>
+                        </select>
+                      </div>
+                    </div>
+                  </>
+                )}
+
                 <div>
                   <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Additional details</label>
                   <textarea
