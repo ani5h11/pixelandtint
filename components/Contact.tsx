@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { CONTACTS } from '@/constants';
 
 const Contact: React.FC = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -13,10 +14,6 @@ const Contact: React.FC = () => {
     vehicleModelYear: '',
     message: ''
   });
-  const email = "[EMAIL_ADDRESS]";
-  const phone = "0450216892";
-  const address = "Melbourne Street, Launceston TAS 7249";
-  const hours = "Appointments Only";
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -94,7 +91,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-white/40 uppercase tracking-widest">Call Us</p>
-                  <p className="text-lg font-bold text-white">{phone}</p>
+                  <p className="text-lg font-bold text-white">{CONTACTS.phone}</p>
                 </div>
               </a>
               <div className="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
@@ -103,7 +100,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-white/40 uppercase tracking-widest">Email Us</p>
-                  <p className="text-lg font-bold text-white">{email}</p>
+                  <p className="text-lg font-bold text-white">{CONTACTS.email}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
@@ -112,7 +109,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-white/40 uppercase tracking-widest">Car Drop Off</p>
-                  <p className="text-lg font-bold text-white">{address}</p>
+                  <p className="text-lg font-bold text-white">{CONTACTS.address}</p>
                 </div>
               </div>
               <div className="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 border border-white/5">
@@ -121,7 +118,7 @@ const Contact: React.FC = () => {
                 </div>
                 <div>
                   <p className="text-xs font-bold text-white/40 uppercase tracking-widest">Hours</p>
-                  <p className="text-lg font-bold text-white">{hours}</p>
+                  <p className="text-lg font-bold text-white">{CONTACTS.hours}</p>
                 </div>
               </div>
             </div>

@@ -92,6 +92,13 @@ export const TESTIMONIALS: Testimonial[] = [
   }
 ];
 
+export const CONTACTS = {
+  email: "pixelandtintau@gmail.com",
+  phone: "0450216892",
+  address: "Melbourne Street, Launceston TAS 7249",
+  hours: "Appointments Only"
+};
+
 export const GALLERY: GalleryImage[] = [
   { id: 1, url: 'https://images.unsplash.com/photo-1552519507-da3b142c6e3d?auto=format&fit=crop&q=80&w=800', category: 'Automotive', title: 'Tesla Model S Pro-Tint' },
   { id: 2, url: 'https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?auto=format&fit=crop&q=80&w=800', category: 'Automotive', title: 'Luxury Sedan Carbon Finish' },

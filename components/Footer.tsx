@@ -2,6 +2,12 @@
 import React from 'react';
 import { Shield, Facebook, Instagram, Twitter } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import { CONTACTS } from '@/constants';
+
+const email = "pixelandtintau@gmail.com";
+const phone = "0450216892";
+const address = "Melbourne Street, Launceston TAS 7249";
+const hours = "Appointments Only";
 
 const Footer: React.FC = () => {
   return (
@@ -38,7 +44,7 @@ const Footer: React.FC = () => {
               <li><a href="#services" className="hover:text-white transition-colors">Automotive Tinting</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Residential Tinting</a></li>
               {/* <li><a href="#services" className="hover:text-white transition-colors">Commercial Tinting</a></li> */}
-              <li><a href="#services" className="hover:text-white transition-colors">Warranty Information</a></li>
+              <li><a href="/terms" className="hover:text-white transition-colors">Warranty Information</a></li>
               {/* <li><a href="#services" className="hover:text-white transition-colors">Safety & Security</a></li> */}
             </ul>
           </div>
@@ -59,15 +65,15 @@ const Footer: React.FC = () => {
             <ul className="space-y-4 text-white/60">
               <li className="flex items-center space-x-3">
                 <span className="text-brightBlue font-bold">P:</span>
-                <span>0450 216 892</span>
+                <span>{CONTACTS.phone}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <span className="text-brightBlue font-bold">E:</span>
-                <span>hello@pixelandtint.com.au</span>
+                <span>{CONTACTS.email}</span>
               </li>
               <li className="flex items-center space-x-3">
                 <span className="text-brightBlue font-bold">A:</span>
-                <span>Melbourne Street, Launceston TAS 7249</span>
+                <span>{CONTACTS.address}</span>
               </li>
             </ul>
           </div>
