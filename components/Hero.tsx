@@ -63,9 +63,9 @@ const Hero: React.FC = () => {
           <div
             className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-20 md:pt-32 transition-all duration-150"
             style={{
-              transform: `scale(${contentScale})`,
+              // transform: `scale(${contentScale})`,
               opacity: Math.max(0, contentOpacity),
-              transformOrigin: 'center center'
+              // transformOrigin: 'center center'
             }}
           >
             <h1 className="text-[20vw] sm:text-[15vw] md:text-[11.4rem] font-black text-white leading-[0.85] md:leading-[0.8] mb-8 md:mb-12 tracking-tighter uppercase italic">

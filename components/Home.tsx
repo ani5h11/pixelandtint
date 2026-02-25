@@ -7,12 +7,16 @@ import BenefitsOfTint from './BenefitsOfTint';
 import Testimonials from './Testimonials';
 import Contact from './Contact';
 import FAQPreview from './FAQPreview';
+import TintDarknessVisualizer from './TintDarknessVisualizer';
+import AboutUs from './AboutUs';
 
 const Home: React.FC = () => {
     return (
         <main>
             <Hero />
             <BenefitsOfTint />
+            <AboutUs />
+            <TintDarknessVisualizer />
             <TypesOfTint />
             <About />
             <Services />
