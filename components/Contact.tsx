@@ -1,7 +1,70 @@
-import React from 'react';
-import { Mail, Phone, MapPin, Send, Clock } from 'lucide-react';
+import React, { useState } from 'react';
+import { Mail, Phone, MapPin, Send, Clock, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 
 const Contact: React.FC = () => {
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    service: 'Automotive Tinting',
+    vehicleMake: '',
+    vehicleModelYear: '',
+    message: ''
+  });
+
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSubmitStatus('idle');
+
+    // Replace with your Web3Forms Access Key
+    const accessKey = "YOUR_ACCESS_KEY_HERE";
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          access_key: accessKey,
+          ...formData,
+          subject: `New Lead from ${formData.name} - Pixel & Tint`,
+          from_name: "Pixel & Tint Website",
+        }),
+      });
+
+      const result = await response.json();
+      if (result.success) {
+        setSubmitStatus('success');
+        setFormData({
+          name: '',
+          email: '',
+          phone: '',
+          service: 'Automotive Tinting',
+          vehicleMake: '',
+          vehicleModelYear: '',
+          message: ''
+        });
+      } else {
+        setSubmitStatus('error');
+      }
+    } catch (error) {
+      console.error("Form submission error:", error);
+      setSubmitStatus('error');
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <section id="contact" className="py-24 bg-navy relative overflow-hidden">
       {/* Decorative background blur */}
@@ -20,8 +83,8 @@ const Contact: React.FC = () => {
               Have a question about our services or need an accurate quote? Fill out the form and our Launceston team will get back to you within 24 hours.
             </p>
 
-            {<div className="space-y-6">
-              <a href="tel:+61312345678" className="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors group border border-white/5">
+            <div className="space-y-6">
+              <a href="tel:0450216892" className="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors group border border-white/5">
                 <div className="bg-brightBlue p-3 rounded-xl text-white group-hover:scale-110 transition-transform shadow-lg">
                   <Phone size={24} />
                 </div>
@@ -57,9 +120,9 @@ const Contact: React.FC = () => {
                   <p className="text-lg font-bold text-white">Appointments Only</p>
                 </div>
               </div>
-            </div>}
+            </div>
 
-            {<div className="mt-12 rounded-[2rem] overflow-hidden h-64 shadow-2xl border border-white/10 bg-white/5 grayscale hover:grayscale-0 transition-all duration-700">
+            <div className="mt-12 rounded-[2rem] overflow-hidden h-64 shadow-2xl border border-white/10 bg-white/5 grayscale hover:grayscale-0 transition-all duration-700">
               <iframe
                 src="https://maps.google.com/maps?q=Melbourne%20Street,%20Launceston&t=&z=15&ie=UTF8&iwloc=&output=embed"
                 width="100%"
@@ -69,82 +132,148 @@ const Contact: React.FC = () => {
                 loading="lazy"
                 title="Office Location"
               ></iframe>
-            </div>}
+            </div>
           </div>
 
           <div className="bg-white/5 backdrop-blur-3xl p-8 md:p-12 rounded-[3rem] shadow-2xl relative overflow-hidden border border-white/10">
             {/* Background Glow */}
             <div className="absolute -top-24 -right-24 w-64 h-64 bg-brightBlue/10 blur-[80px] rounded-full pointer-events-none" />
 
-            <form className="relative z-10 space-y-6" onSubmit={(e) => e.preventDefault()}>
-              <div className="grid md:grid-cols-2 gap-6">
+            {submitStatus === 'success' ? (
+              <div className="relative z-10 flex flex-col items-center justify-center h-full text-center space-y-6 py-12">
+                <div className="bg-brightBlue/20 p-6 rounded-full">
+                  <CheckCircle2 size={64} className="text-brightBlue animate-bounce" />
+                </div>
+                <h3 className="text-3xl font-black text-white italic uppercase tracking-tighter">Quote Request Sent!</h3>
+                <p className="text-white/60 text-lg leading-relaxed max-w-sm">
+                  Thank you for reaching out. Our team will review your details and get back to you shortly with an accurate quote.
+                </p>
+                <button
+                  onClick={() => setSubmitStatus('idle')}
+                  className="bg-white text-navy font-black px-8 py-4 rounded-xl uppercase tracking-widest text-sm hover:bg-brightBlue hover:text-white transition-all shadow-xl"
+                >
+                  Send another message
+                </button>
+              </div>
+            ) : (
+              <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Full Name</label>
+                    <input
+                      required
+                      type="text"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleChange}
+                      placeholder="John Doe"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Email Address</label>
+                    <input
+                      required
+                      type="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleChange}
+                      placeholder="john@example.com"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                    />
+                  </div>
+                </div>
                 <div>
-                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Full Name</label>
+                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Phone Number</label>
                   <input
-                    type="text"
-                    placeholder="John Doe"
+                    required
+                    type="tel"
+                    name="phone"
+                    value={formData.phone}
+                    onChange={handleChange}
+                    placeholder="0412 345 678"
                     className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
                   />
                 </div>
                 <div>
-                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Email Address</label>
-                  <input
-                    type="email"
-                    placeholder="john@example.com"
-                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
-                  />
+                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Service Required</label>
+                  <select
+                    name="service"
+                    value={formData.service}
+                    onChange={handleChange}
+                    className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all appearance-none cursor-pointer"
+                  >
+                    <option value="Automotive Tinting" className="bg-navy">Automotive Tinting</option>
+                    <option value="Residential Tinting" className="bg-navy">Residential Tinting</option>
+                  </select>
                 </div>
-              </div>
-              <div>
-                <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Phone Number</label>
-                <input
-                  type="tel"
-                  placeholder="0412 345 678"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
-                />
-              </div>
-              <div>
-                <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Service Required</label>
-                <select className="w-full bg-white/10 border border-white/20 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all appearance-none cursor-pointer">
-                  <option className="bg-navy">Automotive Tinting</option>
-                  <option className="bg-navy">Residential Tinting</option>
-                </select>
-              </div>
-              <div>
-                <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Make</label>
-                <input
-                  type="text"
-                  placeholder="Toyota"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
-                />
-              </div>
-              <div>
-                <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Model and Year</label>
-                <input
-                  type="text"
-                  placeholder="Camry 2022"
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
-                />
-              </div>
-              <div>
-                <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Your Message</label>
-                <textarea
-                  rows={4}
-                  placeholder="Tell us about your project..."
-                  className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
-                ></textarea>
-              </div>
-              <button
-                type="submit"
-                className="w-full bg-brightBlue hover:bg-white hover:text-navy text-white font-black py-5 rounded-xl transition-all flex items-center justify-center space-x-2 shadow-xl group/submit overflow-hidden relative"
-              >
-                <span className="relative z-10 uppercase tracking-[0.2em] text-sm">Request Free Quote</span>
-                <Send size={18} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
-              </button>
-              <p className="text-center text-white/20 text-[10px] uppercase tracking-widest mt-6 font-mono">
-                Secure SSL Encrypted • Privacy Guaranteed
-              </p>
-            </form>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Make</label>
+                    <input
+                      required
+                      type="text"
+                      name="vehicleMake"
+                      value={formData.vehicleMake}
+                      onChange={handleChange}
+                      placeholder="Toyota"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                    />
+                  </div>
+                  <div>
+                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Model and Year</label>
+                    <input
+                      required
+                      type="text"
+                      name="vehicleModelYear"
+                      value={formData.vehicleModelYear}
+                      onChange={handleChange}
+                      placeholder="Camry 2022"
+                      className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                    />
+                  </div>
+                </div>
+                <div>
+                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Additional details</label>
+                  <textarea
+                    rows={4}
+                    name="message"
+                    value={formData.message}
+                    onChange={handleChange}
+                    placeholder="Tell us about your project..."
+                    className="w-full bg-white/5 border border-white/10 rounded-xl px-5 py-4 text-white focus:outline-none focus:border-brightBlue transition-all placeholder:text-white/20"
+                  ></textarea>
+                </div>
+
+                {submitStatus === 'error' && (
+                  <div className="flex items-center gap-3 p-4 bg-red-500/10 border border-red-500/20 rounded-xl text-red-400 text-sm">
+                    <AlertCircle size={20} />
+                    <span>Something went wrong. Please try again or call us directly.</span>
+                  </div>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className={`w-full bg-brightBlue hover:bg-white hover:text-navy text-white font-black py-5 rounded-xl transition-all flex items-center justify-center space-x-2 shadow-xl group/submit overflow-hidden relative ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? (
+                    <>
+                      <Loader2 size={18} className="animate-spin" />
+                      <span className="relative z-10 uppercase tracking-[0.2em] text-sm">Processing...</span>
+                    </>
+                  ) : (
+                    <>
+                      <span className="relative z-10 uppercase tracking-[0.2em] text-sm">Request Free Quote</span>
+                      <Send size={18} className="relative z-10 group-hover:translate-x-1 group-hover:-translate-y-1 transition-transform" />
+                    </>
+                  )}
+                </button>
+                <p className="text-center text-white/20 text-[10px] uppercase tracking-widest mt-6 font-mono">
+                  Secure SSL Encrypted • Privacy Guaranteed
+                </p>
+              </form>
+            )}
           </div>
         </div>
       </div>
