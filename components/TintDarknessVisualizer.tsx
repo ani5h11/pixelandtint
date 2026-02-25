@@ -105,7 +105,7 @@ const TintDarknessVisualizer: React.FC = () => {
                         <div className="relative aspect-[16/9] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-navy/5">
                             {/* Daytime Road Background */}
                             <img
-                                src="./public/assets/launceston.jpg"
+                                src="/assets/launceston.jpg"
                                 alt="Scenic road background"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
