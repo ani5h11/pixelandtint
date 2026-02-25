@@ -85,7 +85,7 @@ const TintDarknessVisualizer: React.FC = () => {
                             ))}
                         </div>
 
-                        <div className="bg-brightBlue/5 rounded-2xl p-6 border border-brightBlue/10">
+                        {/* <div className="bg-brightBlue/5 rounded-2xl p-6 border border-brightBlue/10">
                             <div className="flex gap-4">
                                 <div className="shrink-0">
                                     <Info className="text-brightBlue" size={24} />
@@ -97,7 +97,7 @@ const TintDarknessVisualizer: React.FC = () => {
                                     </p>
                                 </div>
                             </div>
-                        </div>
+                        </div> */}
                     </div>
 
                     {/* Right Side: Visualizer */}

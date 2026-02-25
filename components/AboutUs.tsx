@@ -47,7 +47,7 @@ const AboutUs: React.FC = () => {
 
                         <div className="space-y-8">
                             <p className="text-navy/70 text-lg leading-relaxed font-medium">
-                                We've reimagined the mobile tinting model. Instead of excessive overhead costs for a fancy showroom, we operate directly from my home-garage. This strategic choice allows us to pass 100% of those savings directly to you.
+                                We've reimagined the mobile tinting model. Instead of excessive overhead costs for a fancy showroom, we operate directly from my home based location. This strategic choice allows us to pass 100% of those savings directly to you.
                             </p>
 
                             <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -55,9 +55,9 @@ const AboutUs: React.FC = () => {
                                     <div className="w-12 h-12 bg-brightBlue/10 rounded-xl flex items-center justify-center mb-4">
                                         <Home className="text-brightBlue" size={24} />
                                     </div>
-                                    <h3 className="text-navy font-black uppercase tracking-tight italic mb-2">Garage Service</h3>
+                                    <h3 className="text-navy font-black uppercase tracking-tight italic mb-2">Home based location</h3>
                                     <p className="text-navy/50 text-sm leading-relaxed">
-                                        Personalized service in a focused, dust-controlled home workspace.
+                                        Customers bring their vehicles to us at our residential site, where we provide the same standard of workmanship and attention to detail as a dedicated workshop.
                                     </p>
                                 </div>
 
