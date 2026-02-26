@@ -81,9 +81,9 @@ const Contact: React.FC = () => {
         <div className="grid lg:grid-cols-2 gap-16">
           <div className="text-white">
             <span className="text-brightBlue font-bold uppercase tracking-widest text-sm">Get in Touch</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-white mt-4 mb-8 italic uppercase tracking-tight">
+            <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mt-4 mb-8 italic uppercase tracking-tight">
               Let's Upgrade Your <br /> Windows Today.
-            </h2>
+            </h3>
             <p className="text-lg text-white/60 mb-10 leading-relaxed max-w-lg">
               Have a question about our services or need an accurate quote? Fill out the form and our Launceston team will get back to you within 24 hours.
             </p>

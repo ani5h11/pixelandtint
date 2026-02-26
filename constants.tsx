@@ -14,6 +14,12 @@ export const SERVICES: ServiceCardProps[] = [
     description: 'Keep your home cool in summer and warm in winter. Enhance privacy without sacrificing your view.',
     icon: <Home className="w-8 h-8 text-brightBlue" />,
     imageUrl: '/assets/window.avif'
+  },
+  {
+    title: 'Commercial Tinting',
+    description: 'Energy-efficient solutions for offices and retail spaces. Reduce glare on screens and cut overhead costs.',
+    icon: <ShieldCheck className="w-8 h-8 text-brightBlue" />,
+    imageUrl: 'https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=800'
   }
 ];
 

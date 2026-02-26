@@ -13,9 +13,9 @@ const Testimonials: React.FC = () => {
     <section id="testimonials" className="py-24 bg-lightAqua/10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl font-extrabold text-navy">
+          <h3 className="text-3xl md:text-4xl lg:text-5xl font-black text-navy uppercase italic tracking-tighter leading-none mb-12">
             Trusted by Drivers and Homeowners <br /> Across Tasmania
-          </h2>
+          </h3>
         </div>
 
         <div className="relative max-w-4xl mx-auto">
@@ -29,10 +29,10 @@ const Testimonials: React.FC = () => {
               <p className="text-xl md:text-2xl italic text-navy/80 leading-relaxed mb-10 text-center">
                 "{TESTIMONIALS[current].content}"
               </p>
-              
+
               <div className="flex flex-col items-center">
-                <img 
-                  src={TESTIMONIALS[current].avatar} 
+                <img
+                  src={TESTIMONIALS[current].avatar}
                   alt={TESTIMONIALS[current].name}
                   className="w-16 h-16 rounded-full mb-4 border-2 border-brightBlue"
                 />
@@ -43,13 +43,13 @@ const Testimonials: React.FC = () => {
 
             {/* Controls */}
             <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
-              <button 
+              <button
                 onClick={prev}
                 className="p-3 rounded-full bg-navy/5 hover:bg-brightBlue hover:text-white transition-all pointer-events-auto shadow-sm"
               >
                 <ChevronLeft />
               </button>
-              <button 
+              <button
                 onClick={next}
                 className="p-3 rounded-full bg-navy/5 hover:bg-brightBlue hover:text-white transition-all pointer-events-auto shadow-sm"
               >
@@ -57,15 +57,14 @@ const Testimonials: React.FC = () => {
               </button>
             </div>
           </div>
-          
+
           <div className="flex justify-center mt-8 space-x-2">
             {TESTIMONIALS.map((_, idx) => (
               <button
                 key={idx}
                 onClick={() => setCurrent(idx)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${
-                  current === idx ? 'bg-brightBlue w-8' : 'bg-navy/20'
-                }`}
+                className={`w-2.5 h-2.5 rounded-full transition-all ${current === idx ? 'bg-brightBlue w-8' : 'bg-navy/20'
+                  }`}
               />
             ))}
           </div>

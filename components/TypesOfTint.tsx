@@ -101,7 +101,7 @@ const TypesOfTint: React.FC = () => {
                 <span className="text-brightBlue font-black uppercase tracking-[0.4em] text-[8px] lg:text-[10px] mb-2 lg:mb-4 inline-block">
                   Technology Tier Comparison
                 </span>
-                <h2 className="text-4xl md:text-5xl lg:text-8xl font-black text-white leading-[0.9] tracking-tighter uppercase italic">
+                <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter uppercase italic">
                   Levels of <br />
                   <span className="text-lightAqua">Shielding</span>
                 </h2>
@@ -119,7 +119,7 @@ const TypesOfTint: React.FC = () => {
                         }`}
                     >
                       <div className="text-center lg:text-left">
-                        <h3 className={`text-[10px] sm:text-[10px] lg:text-lg font-black uppercase italic tracking-tight ${active === key ? 'text-navy' : 'text-white'}`}>
+                        <h3 className={`text-[16px] sm:text-[14px] lg:text-lg font-black uppercase italic tracking-tight ${active === key ? 'text-navy' : 'text-white'}`}>
                           {TINT_DATA[key].name.split(' ')[0]} <span className="hidden sm:inline">{TINT_DATA[key].name.split(' ')[1]}</span>
                         </h3>
                         <p className={`text-[6px] lg:text-[9px] font-bold uppercase tracking-widest lg:block ${active === key ? 'text-navy/40' : 'text-white/40'}`}>

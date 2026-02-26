@@ -36,24 +36,31 @@ const About: React.FC = () => {
           <span className="text-brightBlue font-black uppercase tracking-[0.3em] text-xs mb-4 inline-block">
             Our Workflow
           </span>
-          <h2 className="text-5xl md:text-8xl font-black text-navy leading-[0.85] tracking-tighter uppercase italic">
+          <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-navy leading-[0.85] tracking-tighter uppercase italic">
             Process <br />
             <span className="text-brightBlue">Perfection.</span>
           </h2>
         </div>
 
         {/* Stacking Cards Container */}
-        <div className="space-y-12 md:space-y-0 relative">
+        <div className="space-y-12 md:space-y-24 relative">
           {steps.map((step, index) => (
             <div
               key={step.id}
-              className="md:sticky md:top-32 group"
+              className="sticky top-20 md:top-32 group"
               style={{
-                // Desktop stacking effect
-                paddingBottom: index === steps.length - 1 ? '0' : '4rem'
+                zIndex: 10 + index,
+                marginTop: index === 0 ? '0' : '-10vh', // Slight overlap pull
               }}
             >
-              <div className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(5,14,60,0.12)] border border-navy/5 flex flex-col md:flex-row items-stretch min-h-[500px] transition-transform duration-500 group-hover:-translate-y-2">
+              <div
+                className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(5,14,60,0.12)] border border-navy/5 flex flex-col md:flex-row items-stretch min-h-[500px] transition-all duration-700 ease-out group-hover:-translate-y-2"
+                style={{
+                  // Subtle scale down for cards being stacked over
+                  transform: `scale(${1 - (steps.length - 1 - index) * 0.02})`,
+                  transformOrigin: 'top center'
+                }}
+              >
 
                 {/* Image Side */}
                 <div className="w-full md:w-1/2 relative overflow-hidden h-64 md:h-auto">

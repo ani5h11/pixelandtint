@@ -40,7 +40,7 @@ const TintDarknessVisualizer: React.FC = () => {
                         <span className="text-brightBlue font-black uppercase tracking-[0.4em] text-[10px] mb-4 inline-block">
                             Shade Selection Guide
                         </span>
-                        <h2 className="text-5xl md:text-6xl font-black text-navy leading-[0.9] tracking-tighter uppercase italic mb-8">
+                        <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-navy leading-[0.9] tracking-tighter uppercase italic mb-8">
                             Choose Your <br />
                             <span className="text-brightBlue">Darkness</span>
                         </h2>

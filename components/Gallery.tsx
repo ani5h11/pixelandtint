@@ -5,8 +5,8 @@ import { GALLERY } from '../constants';
 const Gallery: React.FC = () => {
   const [activeCategory, setActiveCategory] = useState<'All' | 'Automotive' | 'Residential' | 'Commercial'>('All');
 
-  const filteredImages = activeCategory === 'All' 
-    ? GALLERY 
+  const filteredImages = activeCategory === 'All'
+    ? GALLERY
     : GALLERY.filter(img => img.category === activeCategory);
 
   const categories = ['All', 'Automotive', 'Residential', 'Commercial'];
@@ -17,19 +17,18 @@ const Gallery: React.FC = () => {
         <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 space-y-6 md:space-y-0">
           <div>
             <span className="text-brightBlue font-bold uppercase tracking-widest text-sm">Portfolio</span>
-            <h2 className="text-4xl md:text-5xl font-extrabold text-navy mt-2">Recent Transformations</h2>
+            <h2 className="text-5xl md:text-6xl lg:text-8xl font-black text-navy mt-2 uppercase italic tracking-tighter leading-none mb-8">Recent Transformations</h2>
           </div>
-          
+
           <div className="flex flex-wrap gap-2">
             {categories.map(cat => (
               <button
                 key={cat}
                 onClick={() => setActiveCategory(cat as any)}
-                className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${
-                  activeCategory === cat 
-                    ? 'bg-navy text-white shadow-lg' 
+                className={`px-6 py-2 rounded-full text-sm font-bold transition-all ${activeCategory === cat
+                    ? 'bg-navy text-white shadow-lg'
                     : 'bg-navy/5 text-navy/60 hover:bg-navy/10'
-                }`}
+                  }`}
               >
                 {cat}
               </button>
@@ -39,12 +38,12 @@ const Gallery: React.FC = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {filteredImages.map((image) => (
-            <div 
+            <div
               key={image.id}
               className="group relative overflow-hidden rounded-3xl aspect-square bg-navy/5 cursor-pointer shadow-sm hover:shadow-2xl transition-all"
             >
-              <img 
-                src={image.url} 
+              <img
+                src={image.url}
                 alt={image.title}
                 loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
