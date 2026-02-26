@@ -15,8 +15,8 @@ const AboutUs: React.FC = () => {
                     <div className="w-full lg:w-1/2 relative">
                         <div className="relative rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
                             <img
-                                src="https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&q=80&w=2000"
-                                alt="Local garage workspace"
+                                src="/assets/seaport.jpg"
+                                alt="Seaport Launceston"
                                 className="w-full aspect-[4/5] object-cover"
                             />
                             {/* Overlay tag */}
@@ -26,12 +26,12 @@ const AboutUs: React.FC = () => {
                             </div>
 
                             {/* Highlight card */}
-                            <div className="absolute bottom-10 -right-4 lg:-right-12 bg-white p-8 rounded-[2rem] shadow-2xl border border-navy/5 max-w-[280px] hidden sm:block">
+                            {/* <div className="absolute bottom-10 -right-4 lg:-right-12 bg-white p-8 rounded-[2rem] shadow-2xl border border-navy/5 max-w-[280px] hidden sm:block">
                                 <h4 className="text-navy font-black italic uppercase text-xl mb-2">Startup Spirit</h4>
                                 <p className="text-navy/60 text-sm leading-relaxed font-medium">
                                     Freshly launched and local-first. We put extra care into every single car that enters our garage.
                                 </p>
-                            </div>
+                            </div> */}
                         </div>
                     </div>
 

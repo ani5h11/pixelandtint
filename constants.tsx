@@ -96,7 +96,9 @@ export const CONTACTS = {
   email: "pixelandtintau@gmail.com",
   phone: "0450216892",
   address: "Melbourne Street, Launceston TAS 7249",
-  hours: "Appointments Only"
+  hours: "Appointments Only",
+  facebook: "https://www.facebook.com/share/1AMuNiNB3j/?mibextid=wwXlfr",
+  instagram: "https://www.instagram.com/pixelandtintau/",
 };
 
 export const GALLERY: GalleryImage[] = [

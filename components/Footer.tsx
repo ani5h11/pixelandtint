@@ -1,13 +1,9 @@
 
 import React from 'react';
-import { Shield, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Facebook, Instagram } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { CONTACTS } from '@/constants';
 
-const email = "pixelandtintau@gmail.com";
-const phone = "0450216892";
-const address = "Melbourne Street, Launceston TAS 7249";
-const hours = "Appointments Only";
 
 const Footer: React.FC = () => {
   return (
@@ -16,7 +12,6 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
-              {/* <Shield className="w-8 h-8 text-brightBlue" /> */}
               <img src="/assets/mainLogo.png" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
               <span className="text-2xl font-bold tracking-tight uppercase">
                 PIXEL & <span className="text-brightBlue">TINT</span>
@@ -26,15 +21,13 @@ const Footer: React.FC = () => {
               Tasmania’s premier window tinting service. We combine precision craftsmanship with the latest film technology for unparalleled results. Affordable and professional window tinting services across Launceston and surrounding areas.
             </p>
             <div className="flex space-x-4">
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
+              <a href={CONTACTS.facebook} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
+              <a href={CONTACTS.instagram} className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
                 <Instagram size={20} />
               </a>
-              {/* <a href="#" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
-                <Twitter size={20} />
-              </a> */}
+
             </div>
           </div>
 
@@ -48,17 +41,6 @@ const Footer: React.FC = () => {
               {/* <li><a href="#services" className="hover:text-white transition-colors">Safety & Security</a></li> */}
             </ul>
           </div>
-
-          {/* <div>
-            <h4 className="font-bold text-lg mb-6 text-lightAqua uppercase tracking-widest text-sm">Quick Links</h4>
-            <ul className="space-y-4 text-white/60">
-              <li><a href="#about" className="hover:text-white transition-colors">About Us</a></li>
-              <li><a href="#portfolio" className="hover:text-white transition-colors">Our Portfolio</a></li>
-              <li><a href="#testimonials" className="hover:text-white transition-colors">Testimonials</a></li>
-              <li><a href="#contact" className="hover:text-white transition-colors">Request Quote</a></li>
-              <li><a href="#" className="hover:text-white transition-colors">Warranty Info</a></li>
-            </ul>
-          </div> */}
 
           <div>
             <h4 className="font-bold text-lg mb-6 text-lightAqua uppercase tracking-widest text-sm">Contact Details</h4>
