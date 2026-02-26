@@ -6,64 +6,93 @@ const Services: React.FC = () => {
   return (
     <section
       id="services"
-      className="relative bg-navy py-24 md:py-32 overflow-visible"
+      className="relative bg-navy py-24 md:py-32 overflow-hidden"
     >
-      {/* Decorative patterns */}
+      {/* Background Decorative Grid */}
+      <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
+
+      {/* Decorative blobs */}
       <div className="absolute inset-0 opacity-10 pointer-events-none overflow-hidden">
-        <div className="absolute top-0 left-0 w-full h-full grid-bg" style={{ backgroundSize: '60px 60px' }} />
         <div className="absolute top-1/4 -left-20 w-96 h-96 bg-brightBlue blur-[150px] rounded-full" />
         <div className="absolute bottom-1/4 -right-20 w-96 h-96 bg-lightAqua blur-[150px] rounded-full" />
       </div>
 
       <div className="max-w-7xl mx-auto px-6 relative z-10">
-        <div className="text-center mb-20 md:mb-32">
-          <span className="text-brightBlue font-black uppercase tracking-[0.4em] text-[10px] mb-4 inline-block">
-            Available Services
+        <div className="text-center mb-16 md:mb-24">
+          <span className="text-brightBlue font-black uppercase tracking-[0.3em] text-xs mb-4 inline-block">
+            Our Solutions
           </span>
           <h2 className="text-5xl md:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter uppercase italic">
-            Our <br />
-            <span className="text-lightAqua">Solutions</span>
+            Services <br />
+            <span className="text-lightAqua">Simplified.</span>
           </h2>
         </div>
 
-        {/* Stacking Pill Cards Container */}
-        <div className="relative space-y-[40vh] md:space-y-[60vh] pb-[20vh]">
-          {SERVICES.map((service, idx) => (
+        {/* Stacking Cards Container */}
+        <div className="space-y-[60vh] md:space-y-[80vh] relative pb-[40vh]">
+          {SERVICES.map((service, index) => (
             <div
-              key={idx}
-              className="sticky top-32 md:top-48 lg:top-60 flex justify-center w-full group"
-              style={{ zIndex: 10 + idx }}
+              key={index}
+              className="sticky top-20 md:top-32 group"
+              style={{
+                zIndex: 10 + index,
+              }}
             >
-              <div className="w-full max-w-5xl bg-white rounded-[2rem] md:rounded-[3.5rem] p-3 md:p-6 shadow-[0_40px_100px_-20px_rgba(0,0,0,0.4)] flex items-center gap-4 md:gap-12 transition-all duration-700 ease-out group-hover:-translate-y-2 border border-white/10 overflow-hidden relative">
+              <div
+                className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(5,14,60,0.12)] border border-navy/5 flex flex-col md:flex-row items-stretch min-h-[500px] transition-all duration-700 ease-out group-hover:-translate-y-2"
+                style={{
+                  // Subtle scale down for cards being stacked over
+                  transform: `scale(${1 - (SERVICES.length - 1 - index) * 0.02})`,
+                  transformOrigin: 'top center'
+                }}
+              >
 
-                {/* Left: Rounded Square Image */}
-                <div className="w-24 h-24 md:w-56 md:h-56 shrink-0 overflow-hidden rounded-[1.5rem] md:rounded-[2.5rem] bg-canvas">
+                {/* Image Side */}
+                <div className="w-full md:w-1/2 relative overflow-hidden h-64 md:h-auto">
                   <img
                     src={service.imageUrl}
                     alt={service.title}
-                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                    className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent md:hidden" />
+                  <div className="absolute top-8 left-8 bg-navy/90 backdrop-blur-md text-white px-4 py-2 text-[10px] font-black rounded-full border border-white/10 uppercase tracking-widest">
+                    SERVICE_0{index + 1}
+                  </div>
                 </div>
 
-                {/* Center: Bold Title & Info */}
-                <div className="flex-1 text-center md:text-left">
-                  <h3 className="text-2xl md:text-6xl lg:text-7xl font-black text-navy uppercase italic tracking-tighter leading-none mb-2 md:mb-4">
-                    {service.title}
-                  </h3>
-                  <p className="text-navy/50 text-[10px] md:text-lg font-bold uppercase tracking-[0.2em] hidden md:block">
-                    {service.description.split('.')[0]}.
+                {/* Content Side */}
+                <div className="w-full md:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center bg-white">
+                  <div className="mb-6 md:mb-8 text-center md:text-left">
+                    <div className="flex justify-center md:justify-start items-center gap-4 mb-4">
+                      <div className="bg-brightBlue/10 p-3 rounded-xl">
+                        {React.cloneElement(service.icon as React.ReactElement<any>, { size: 32, className: 'text-brightBlue' })}
+                      </div>
+                      <span className="text-brightBlue font-bold text-lg md:text-2xl">
+                        0{index + 1}.
+                      </span>
+                    </div>
+                    <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-navy leading-none uppercase italic tracking-tighter">
+                      {service.title}
+                    </h3>
+                  </div>
+                  <p className="text-navy/70 text-base md:text-xl leading-relaxed font-medium text-center md:text-left">
+                    {service.description}
                   </p>
-                </div>
 
-                {/* Right: Index Number */}
-                <div className="pr-4 md:pr-12">
-                  <span className="text-2xl md:text-7xl font-black text-navy/10 md:text-navy/20 uppercase italic tracking-tighter tabular-nums">
-                    0{idx + 1}
-                  </span>
-                </div>
+                  <div className="mt-10 md:mt-16 flex items-center justify-center md:justify-start">
+                    <a
+                      href="#contact"
+                      className="px-8 py-4 bg-brightBlue hover:bg-navy text-white rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-xl active:scale-95"
+                    >
+                      Explore Options
+                    </a>
+                  </div>
 
-                {/* Hover Interaction: Gradient Reveal */}
-                <div className="absolute inset-0 bg-gradient-to-r from-brightBlue/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none" />
+                  <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/30 group-hover:text-brightBlue transition-colors duration-500">
+                    <div className="h-px flex-1 bg-current opacity-20" />
+                    <span className="font-mono text-[10px] tracking-[0.3em] font-bold uppercase">Premium Shield</span>
+                  </div>
+                </div>
               </div>
             </div>
           ))}
