@@ -8,6 +8,7 @@ import TermsOfService from './components/TermsOfService';
 import Footer from './components/Footer';
 import { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const ScrollToTop: React.FC = () => {
   const location = useLocation();
@@ -30,6 +31,7 @@ const App: React.FC = () => {
           <Route path="/terms" element={<TermsOfService />} />
         </Routes>
         <Footer />
+        <SpeedInsights />
       </div>
     </Router>
   );
