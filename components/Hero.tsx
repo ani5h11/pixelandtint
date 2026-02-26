@@ -68,7 +68,6 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-navy/90" />
           </div>
 
-          {/* Receding Content Overlay */}
           <div
             className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-20 md:pt-32 transition-all duration-150"
           // style={{
@@ -105,7 +104,7 @@ const Hero: React.FC = () => {
           </div>
         </div>
       </div>
-    </section>
+    </section >
   );
 };
 
