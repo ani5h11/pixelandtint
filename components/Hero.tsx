@@ -69,8 +69,6 @@ const Hero: React.FC = () => {
           </div>
 
           {/* Receding Content Overlay */}
-          <div
-            className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-20 md:pt-32 transition-all duration-150"
           // style={{
           //   transform: `scale(${contentScale})`,
           //   opacity: Math.max(0, contentOpacity),
@@ -103,9 +101,9 @@ const Hero: React.FC = () => {
               </a>
             </div>
           </div>
-        </div>
       </div>
-    </section>
+    </div>
+    </section >
   );
 };
 
