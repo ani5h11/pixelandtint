@@ -28,24 +28,15 @@ const Services: React.FC = () => {
           </h2>
         </div>
 
-        {/* Stacking Cards Container */}
-        <div className="space-y-[60vh] md:space-y-[80vh] relative pb-[40vh]">
+        {/* Services Cards Container */}
+        <div className="space-y-12 md:space-y-24">
           {SERVICES.map((service, index) => (
             <div
               key={index}
-              className="sticky top-20 md:top-32 group"
-              style={{
-                zIndex: 10 + index,
-                marginTop: index === 0 ? '0' : '-10vh', // Consistent stacking pull
-              }}
+              className="group"
             >
               <div
-                className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(5,14,60,0.12)] border border-navy/5 flex flex-col md:flex-row items-stretch min-h-[500px] transition-all duration-700 ease-out group-hover:-translate-y-2"
-                style={{
-                  // Subtle scale down for cards being stacked over
-                  transform: `scale(${1 - (SERVICES.length - 1 - index) * 0.02})`,
-                  transformOrigin: 'top center'
-                }}
+                className="bg-white rounded-[2.5rem] md:rounded-[4rem] overflow-hidden shadow-[0_40px_100px_-20px_rgba(5,14,60,0.12)] border border-navy/5 flex flex-col md:flex-row items-stretch min-h-[500px] transition-all duration-700 ease-out hover:-translate-y-2 hover:shadow-2xl"
               >
 
                 {/* Image Side */}
@@ -53,6 +44,7 @@ const Services: React.FC = () => {
                   <img
                     src={service.imageUrl}
                     alt={service.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent md:hidden" />

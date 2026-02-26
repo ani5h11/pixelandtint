@@ -78,6 +78,7 @@ const FAQPreview: React.FC = () => {
                         <img
                             src="/assets/whitecar.png"
                             alt="Window Tinting Process"
+                            loading="lazy"
                             className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110 grayscale group-hover:grayscale-0"
                         />
                         <div className="absolute inset-0 bg-gradient-to-t from-navy/90 to-transparent" />

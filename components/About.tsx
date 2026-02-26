@@ -67,6 +67,7 @@ const About: React.FC = () => {
                   <img
                     src={step.image}
                     alt={step.title}
+                    loading="lazy"
                     className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-navy/40 to-transparent md:hidden" />

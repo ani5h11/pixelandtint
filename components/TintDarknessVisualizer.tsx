@@ -107,6 +107,7 @@ const TintDarknessVisualizer: React.FC = () => {
                             <img
                                 src="/assets/launceston.jpg"
                                 alt="Scenic road background"
+                                loading="lazy"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
 

@@ -17,6 +17,7 @@ const AboutUs: React.FC = () => {
                             <img
                                 src="/assets/seaport.jpg"
                                 alt="Seaport Launceston"
+                                loading="lazy"
                                 className="w-full aspect-[4/5] object-cover"
                             />
                             {/* Overlay tag */}

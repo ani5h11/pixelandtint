@@ -34,6 +34,7 @@ const Testimonials: React.FC = () => {
                 <img
                   src={TESTIMONIALS[current].avatar}
                   alt={TESTIMONIALS[current].name}
+                  loading="lazy"
                   className="w-16 h-16 rounded-full mb-4 border-2 border-brightBlue"
                 />
                 <h4 className="font-bold text-lg text-navy">{TESTIMONIALS[current].name}</h4>
