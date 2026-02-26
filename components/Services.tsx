@@ -36,6 +36,7 @@ const Services: React.FC = () => {
               className="sticky top-20 md:top-32 group"
               style={{
                 zIndex: 10 + index,
+                marginTop: index === 0 ? '0' : '-10vh', // Consistent stacking pull
               }}
             >
               <div
@@ -84,7 +85,7 @@ const Services: React.FC = () => {
                       href="#contact"
                       className="px-8 py-4 bg-brightBlue hover:bg-navy text-white rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-xl active:scale-95"
                     >
-                      Explore Options
+                      Get a Quote
                     </a>
                   </div>
 
