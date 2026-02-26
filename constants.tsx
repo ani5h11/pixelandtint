@@ -7,7 +7,7 @@ export const SERVICES: ServiceCardProps[] = [
     title: 'Automotive Tinting',
     description: 'Ultra-clear, heat-rejecting film designed for Tasmania’s roads. Affordable service with quality tint. Full Car Tinting starts from $249 for Classic, $399 for Ceramic, and $449 for Nano Ceramic.',
     icon: <Car className="w-8 h-8 text-brightBlue" />,
-    imageUrl: '/assets/blacksuv.png'
+    imageUrl: '/assets/whitesuv.jpg'
   },
   {
     title: 'Residential Tinting',
