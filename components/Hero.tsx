@@ -5,8 +5,15 @@ const Hero: React.FC = () => {
   const [scrollY, setScrollY] = useState(0);
 
   useEffect(() => {
+    let ticking = false;
     const handleScroll = () => {
-      setScrollY(window.scrollY);
+      if (!ticking) {
+        window.requestAnimationFrame(() => {
+          setScrollY(window.scrollY);
+          ticking = false;
+        });
+        ticking = true;
+      }
     };
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
@@ -50,7 +57,7 @@ const Hero: React.FC = () => {
         >
           {/* Receding Background */}
           <div
-            className="absolute inset-0 z-0 transition-transform duration-75 ease-out"
+            className="absolute inset-0 z-0"
             style={{
               transform: `scale(${bgScale})`,
               backgroundImage: `url('/assets/heroimage.jpg')`,
