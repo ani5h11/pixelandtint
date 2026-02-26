@@ -68,12 +68,8 @@ const Hero: React.FC = () => {
             <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-navy/90" />
           </div>
 
-<<<<<<< HEAD
           <div
             className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-20 md:pt-32 transition-all duration-150"
-=======
-          {/* Receding Content Overlay */}
->>>>>>> d5b2da0820b7934a7e5b4909cf97672de70743b1
           // style={{
           //   transform: `scale(${contentScale})`,
           //   opacity: Math.max(0, contentOpacity),
@@ -106,12 +102,9 @@ const Hero: React.FC = () => {
               </a>
             </div>
           </div>
+        </div>
       </div>
-<<<<<<< HEAD
-=======
-    </div>
->>>>>>> d5b2da0820b7934a7e5b4909cf97672de70743b1
-    </section >
+    </section>
   );
 };
 

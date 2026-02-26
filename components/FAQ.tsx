@@ -12,7 +12,7 @@ const FAQ: React.FC = () => {
     return (
         <div className="bg-white min-h-screen pt-32 pb-20">
             <div className="max-w-4xl mx-auto px-6">
-                <h1 className="text-5xl md:text-7xl font-black text-navy mb-4 tracking-tight italic">
+                <h1 className="text-5xl md:text-8xl font-black text-navy mb-4 tracking-tight italic">
                     FREQUENTLY ASKED <span className="text-brightBlue">QUESTIONS</span>
                 </h1>
                 <p className="text-xl text-navy/60 mb-16 max-w-2xl font-light">

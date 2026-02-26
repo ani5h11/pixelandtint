@@ -25,7 +25,7 @@ const FAQPreview: React.FC = () => {
                         <span className="text-brightBlue font-black uppercase tracking-[0.5em] text-[10px] mb-4 md:mb-6 inline-block">
                             Info Center
                         </span>
-                        <h2 className="text-4xl md:text-5xl lg:text-7xl font-black leading-[0.9] mb-4 md:mb-12 tracking-tighter uppercase italic">
+                        <h2 className="text-4xl md:text-5xl lg:text-8xl font-black leading-[0.9] mb-4 md:mb-12 tracking-tighter uppercase italic">
                             Common <br />
                             <span className="text-brightBlue">Questions</span>
                         </h2>

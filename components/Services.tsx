@@ -52,7 +52,7 @@ const Services: React.FC = () => {
               <span className="text-brightBlue font-black uppercase tracking-[0.4em] text-[8px] lg:text-[10px] mb-2 lg:mb-4 inline-block">
                 Available Services
               </span>
-              <h2 className="text-4xl md:text-5xl lg:text-7xl font-black leading-[0.9] mb-4 md:mb-12 tracking-tighter uppercase italic">
+              <h2 className="text-4xl md:text-5xl lg:text-8xl font-black leading-[0.9] mb-4 md:mb-12 tracking-tighter uppercase italic">
                 Our <br />
                 <span className="text-lightAqua">Solutions</span>
               </h2>
