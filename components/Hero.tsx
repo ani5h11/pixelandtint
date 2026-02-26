@@ -34,7 +34,7 @@ const Hero: React.FC = () => {
 
   return (
     <section id="hero" className="relative h-[200vh] bg-transparent">
-      <div className="sticky top-0 h-screen w-full flex items-center justify-center overflow-hidden z-20 pointer-events-none">
+      <div className="sticky top-0 h-[100dvh] w-full flex items-center justify-center overflow-hidden z-20 pointer-events-none" style={{ perspective: '1000px' }}>
         <div
           className="flipped-tab relative overflow-hidden shadow-[0_60px_120px_-30px_rgba(0,0,0,0.6)] bg-navy pointer-events-auto"
           style={{
@@ -42,8 +42,10 @@ const Hero: React.FC = () => {
             borderRadius: `${borderRadius}px`,
             width: '100%',
             maxWidth: '100vw',
-            height: '100vh',
+            height: '100dvh',
             transformOrigin: 'top center',
+            willChange: 'transform, border-radius',
+            backfaceVisibility: 'hidden',
           }}
         >
           {/* Receding Background */}
@@ -62,11 +64,11 @@ const Hero: React.FC = () => {
           {/* Receding Content Overlay */}
           <div
             className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-20 md:pt-32 transition-all duration-150"
-          // style={{
-          //   transform: `scale(${contentScale})`,
-          //   opacity: Math.max(0, contentOpacity),
-          //   transformOrigin: 'center center'
-          // }}
+            style={{
+              transform: `scale(${contentScale})`,
+              opacity: Math.max(0, contentOpacity),
+              transformOrigin: 'center center'
+            }}
           >
             <h1 className="text-[20vw] sm:text-[15vw] md:text-[11.4rem] font-black text-white leading-[0.85] md:leading-[0.8] mb-8 md:mb-12 tracking-tighter uppercase italic">
               Get <br />
