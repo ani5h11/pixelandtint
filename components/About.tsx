@@ -7,21 +7,21 @@ const About: React.FC = () => {
       id: 1,
       title: "Consultation & Preparation",
       description: "We help you choose the right film type, heat rejection & privacy level. Before installation, we thoroughly clean and prep each window to remove dust, debris, and contaminants. Proper preparation ensures a smooth, bubble-free finish that lasts for years.",
-      image: "/assets/consultation.jpg",
+      image: "/assets/consultation.webp",
       tag: "PHASE_01"
     },
     {
       id: 2,
       title: "Precision Custom Fit",
       description: "We specialize in precision hand cutting, carefully shaping the film to match the exact contours of your windows. Our attention to detail ensures every window is perfectly fitted — not rushed. No pre-cut gaps, just a factory-perfect finish.",
-      image: "/assets/custom.jpg",
+      image: "/assets/custom.webp",
       tag: "PHASE_02"
     },
     {
       id: 3,
       title: "Quality Installation",
       description: "Once the film is cut, we professionally install it using advanced techniques to remove air and moisture, heat-shape curved glass, and secure clean edges. Our team conducts a final 360° inspection to ensure excellence.",
-      image: "/assets/inspection.jpg",
+      image: "/assets/inspection.webp",
       tag: "PHASE_03"
     }
   ];

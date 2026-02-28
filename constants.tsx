@@ -117,7 +117,7 @@ export const GALLERY: GalleryImage[] = [
 export const FAQS = [
   {
     question: "Is professional window tinting worth the investment in 2026?",
-    answer: "es. Professional window tinting provides a high ROI by preventing interior fading (preserving resale value), reducing energy costs by up to 30% in residential settings, and providing a shatter-resistant layer for enhanced glass safety."
+    answer: "Yes. Professional window tinting provides a high ROI by preventing interior fading (preserving resale value), reducing energy costs by up to 30% in residential settings, and providing a shatter-resistant layer for enhanced glass safety."
   },
   {
     question: "How does window tinting improve electric vehicle (EV) range?",

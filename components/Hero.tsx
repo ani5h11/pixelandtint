@@ -60,7 +60,7 @@ const Hero: React.FC = () => {
             className="absolute inset-0 z-0"
             style={{
               transform: `scale(${bgScale})`,
-              backgroundImage: `url('/assets/heroimage.jpg')`,
+              backgroundImage: `url('/assets/heroimage.webp')`,
               backgroundSize: 'cover',
               backgroundPosition: 'center',
             }}

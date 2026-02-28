@@ -164,8 +164,9 @@ const Contact: React.FC = () => {
               <form className="relative z-10 space-y-6" onSubmit={handleSubmit}>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Full Name</label>
+                    <label htmlFor="name" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Full Name</label>
                     <input
+                      id="name"
                       required
                       type="text"
                       name="name"
@@ -176,8 +177,9 @@ const Contact: React.FC = () => {
                     />
                   </div>
                   <div>
-                    <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Email Address</label>
+                    <label htmlFor="email" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Email Address</label>
                     <input
+                      id="email"
                       required
                       type="email"
                       name="email"
@@ -189,8 +191,9 @@ const Contact: React.FC = () => {
                   </div>
                 </div>
                 <div>
-                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Phone Number</label>
+                  <label htmlFor="phone" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Phone Number</label>
                   <input
+                    id="phone"
                     required
                     type="tel"
                     name="phone"
@@ -201,8 +204,9 @@ const Contact: React.FC = () => {
                   />
                 </div>
                 <div>
-                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Service Required</label>
+                  <label htmlFor="service" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Service Required</label>
                   <select
+                    id="service"
                     name="service"
                     value={formData.service}
                     onChange={handleChange}
@@ -216,8 +220,9 @@ const Contact: React.FC = () => {
                   <>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Make</label>
+                        <label htmlFor="vehicleMake" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Make</label>
                         <input
+                          id="vehicleMake"
                           required
                           type="text"
                           name="vehicleMake"
@@ -228,8 +233,9 @@ const Contact: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Model</label>
+                        <label htmlFor="vehicleModel" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Model</label>
                         <input
+                          id="vehicleModel"
                           required
                           type="text"
                           name="vehicleModel"
@@ -243,8 +249,9 @@ const Contact: React.FC = () => {
 
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Year</label>
+                        <label htmlFor="vehicleYear" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Vehicle Year</label>
                         <input
+                          id="vehicleYear"
                           required
                           type="text"
                           name="vehicleYear"
@@ -255,8 +262,9 @@ const Contact: React.FC = () => {
                         />
                       </div>
                       <div>
-                        <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Film Type</label>
+                        <label htmlFor="filmType" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Film Type</label>
                         <select
+                          id="filmType"
                           required
                           name="filmType"
                           value={formData.filmType}
@@ -273,8 +281,9 @@ const Contact: React.FC = () => {
                 )}
 
                 <div>
-                  <label className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Additional details</label>
+                  <label htmlFor="message" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Additional details</label>
                   <textarea
+                    id="message"
                     rows={4}
                     name="message"
                     value={formData.message}

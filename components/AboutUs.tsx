@@ -15,7 +15,7 @@ const AboutUs: React.FC = () => {
                     <div className="w-full lg:w-1/2 relative">
                         <div className="relative rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-white">
                             <img
-                                src="/assets/seaport.jpg"
+                                src="/assets/seaport.webp"
                                 alt="Seaport Launceston"
                                 loading="lazy"
                                 className="w-full aspect-[4/5] object-cover"

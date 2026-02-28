@@ -12,7 +12,7 @@ const Footer: React.FC = () => {
         <div className="grid md:grid-cols-3 gap-12 mb-16">
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
-              <img src="/assets/mainLogo.png" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
+              <img src="/assets/mainLogo.webp" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
               <span className="text-2xl font-bold tracking-tight uppercase">
                 PIXEL & <span className="text-brightBlue">TINT</span>
               </span>
