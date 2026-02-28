@@ -17,7 +17,7 @@ const Footer: React.FC = () => {
                 PIXEL & <span className="text-brightBlue">TINT</span>
               </span>
             </div>
-            <p className="text-white/60 leading-relaxed mb-6">
+            <p className="text-white/80 leading-relaxed mb-6">
               Tasmania’s premier window tinting service. We combine precision craftsmanship with the latest film technology for unparalleled results. Affordable and professional window tinting services across Launceston and surrounding areas.
             </p>
             <div className="flex space-x-4">
@@ -33,7 +33,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="font-bold text-lg mb-6 text-lightAqua uppercase tracking-widest text-sm">Quick Links</h4>
-            <ul className="space-y-4 text-white/60">
+            <ul className="space-y-4 text-white/80">
               <li><a href="#services" className="hover:text-white transition-colors">Automotive Tinting</a></li>
               <li><a href="#services" className="hover:text-white transition-colors">Residential Tinting</a></li>
               {/* <li><a href="#services" className="hover:text-white transition-colors">Commercial Tinting</a></li> */}
@@ -44,7 +44,7 @@ const Footer: React.FC = () => {
 
           <div>
             <h4 className="font-bold text-lg mb-6 text-lightAqua uppercase tracking-widest text-sm">Contact Details</h4>
-            <ul className="space-y-4 text-white/60">
+            <ul className="space-y-4 text-white/80">
               <li className="flex items-center space-x-3">
                 <span className="text-brightBlue font-bold">P:</span>
                 <span>{CONTACTS.phone}</span>
@@ -61,7 +61,7 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-white/40 text-xs uppercase tracking-widest space-y-4 md:space-y-0">
+        <div className="pt-12 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-white/80 text-xs uppercase tracking-widest space-y-4 md:space-y-0">
           <p>© 2026 Pixel & Tint. All Rights Reserved.</p>
           <div className="flex space-x-8">
             <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>

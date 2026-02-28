@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from 'react';
 import Hero from './Hero';
-import BenefitsOfTint from './BenefitsOfTint';
-import AboutUs from './AboutUs';
+// Lazy load below-the-fold components for performance
+const BenefitsOfTint = lazy(() => import('./BenefitsOfTint'));
+const AboutUs = lazy(() => import('./AboutUs'));
 
 // Lazy load below-the-fold components for performance
 const TintDarknessVisualizer = lazy(() => import('./TintDarknessVisualizer'));
@@ -22,10 +23,9 @@ const Home: React.FC = () => {
     return (
         <main>
             <Hero />
-            <BenefitsOfTint />
-            <AboutUs />
-
             <Suspense fallback={<SectionLoader />}>
+                <BenefitsOfTint />
+                <AboutUs />
                 <TintDarknessVisualizer />
                 <TypesOfTint />
                 <About />

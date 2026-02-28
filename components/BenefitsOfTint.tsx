@@ -89,7 +89,7 @@ const BenefitsOfTint: React.FC = () => {
               </div>
 
               {/* Background index number */}
-              <span className="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-4 text-[8rem] md:text-[12rem] font-black text-navy/[0.02] uppercase italic pointer-events-none select-none transition-all duration-1000 group-hover:-translate-x-12 group-hover:-translate-y-4">
+              <span className="absolute -bottom-4 -right-2 md:-bottom-6 md:-right-4 text-[8rem] md:text-[12rem] font-black text-navy/[0.2] uppercase italic pointer-events-none select-none transition-all duration-1000 group-hover:-translate-x-12 group-hover:-translate-y-4">
                 {idx + 1}
               </span>
             </div>
