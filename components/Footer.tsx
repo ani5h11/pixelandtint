@@ -21,10 +21,10 @@ const Footer: React.FC = () => {
               Tasmania’s premier window tinting service. We combine precision craftsmanship with the latest film technology for unparalleled results. Affordable and professional window tinting services across Launceston and surrounding areas.
             </p>
             <div className="flex space-x-4">
-              <a href={CONTACTS.facebook} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
+              <a href={CONTACTS.facebook} aria-label="Facebook" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
                 <Facebook size={20} />
               </a>
-              <a href={CONTACTS.instagram} target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
+              <a href={CONTACTS.instagram} aria-label="Instagram" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-brightBlue transition-colors">
                 <Instagram size={20} />
               </a>
 

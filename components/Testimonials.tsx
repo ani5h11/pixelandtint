@@ -45,14 +45,16 @@ const Testimonials: React.FC = () => {
             {/* Controls */}
             <div className="absolute top-1/2 -translate-y-1/2 left-4 right-4 flex justify-between pointer-events-none">
               <button
+                aria-label="Previous Testimonial"
                 onClick={prev}
-                className="p-3 rounded-full bg-navy/5 hover:bg-brightBlue hover:text-white transition-all pointer-events-auto shadow-sm"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-navy/5 hover:bg-brightBlue hover:text-white transition-all pointer-events-auto shadow-sm"
               >
                 <ChevronLeft />
               </button>
               <button
+                aria-label="Next Testimonial"
                 onClick={next}
-                className="p-3 rounded-full bg-navy/5 hover:bg-brightBlue hover:text-white transition-all pointer-events-auto shadow-sm"
+                className="w-12 h-12 flex items-center justify-center rounded-full bg-navy/5 hover:bg-brightBlue hover:text-white transition-all pointer-events-auto shadow-sm"
               >
                 <ChevronRight />
               </button>
@@ -63,10 +65,12 @@ const Testimonials: React.FC = () => {
             {TESTIMONIALS.map((_, idx) => (
               <button
                 key={idx}
+                aria-label={`Go to slide ${idx + 1}`}
                 onClick={() => setCurrent(idx)}
-                className={`w-2.5 h-2.5 rounded-full transition-all ${current === idx ? 'bg-brightBlue w-8' : 'bg-navy/20'
-                  }`}
-              />
+                className="w-12 h-12 flex items-center justify-center transition-all focus:outline-none"
+              >
+                <div className={`w-2.5 h-2.5 rounded-full transition-all ${current === idx ? 'bg-brightBlue w-8' : 'bg-navy/20'}`} />
+              </button>
             ))}
           </div>
         </div>

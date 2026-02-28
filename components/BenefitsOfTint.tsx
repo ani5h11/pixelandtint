@@ -37,7 +37,7 @@ const BenefitsOfTint: React.FC = () => {
               </div>
 
               <div>
-                <p className="text-[10px] font-black uppercase text-navy/40 tracking-widest">Global Standard</p>
+                <p className="text-[10px] font-black uppercase text-navy/70 tracking-widest">Global Standard</p>
                 <p className="text-xs font-bold text-navy uppercase">Skin Cancer Foundation Recommended</p>
               </div>
             </div>
@@ -69,7 +69,7 @@ const BenefitsOfTint: React.FC = () => {
               <h3 className="text-xl md:text-2xl font-black text-navy uppercase italic tracking-tight mb-4 group-hover:text-brightBlue transition-colors duration-500">
                 {benefit.title}
               </h3>
-              <p className="text-navy/50 font-medium leading-relaxed mb-8 md:mb-10 text-sm md:text-base">
+              <p className="text-navy/70 font-medium leading-relaxed mb-8 md:mb-10 text-sm md:text-base">
                 {benefit.desc}
               </p>
 

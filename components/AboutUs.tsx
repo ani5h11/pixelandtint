@@ -57,7 +57,7 @@ const AboutUs: React.FC = () => {
                                         <Home className="text-brightBlue" size={24} />
                                     </div>
                                     <h3 className="text-navy font-black uppercase tracking-tight italic mb-2">Home based location</h3>
-                                    <p className="text-navy/50 text-sm leading-relaxed">
+                                    <p className="text-navy/70 text-sm leading-relaxed">
                                         Customers bring their vehicles to us at our residential site, where we provide the same standard of workmanship and attention to detail as a dedicated workshop.
                                     </p>
                                 </div>
@@ -67,7 +67,7 @@ const AboutUs: React.FC = () => {
                                         <Truck className="text-brightBlue" size={24} />
                                     </div>
                                     <h3 className="text-navy font-black uppercase tracking-tight italic mb-2">Pickup Available</h3>
-                                    <p className="text-navy/50 text-sm leading-relaxed">
+                                    <p className="text-navy/70 text-sm leading-relaxed">
                                         Too busy? We can arrange a local pickup and drop-off for your vehicle.
                                     </p>
                                 </div>
@@ -77,7 +77,7 @@ const AboutUs: React.FC = () => {
                                         <ShieldCheck className="text-brightBlue" size={24} />
                                     </div>
                                     <h3 className="text-navy font-black uppercase tracking-tight italic mb-2">Maximum Value</h3>
-                                    <p className="text-navy/50 text-sm leading-relaxed">
+                                    <p className="text-navy/70 text-sm leading-relaxed">
                                         Professional grade films and finish without the dealership price tag.
                                     </p>
                                 </div>
@@ -87,7 +87,7 @@ const AboutUs: React.FC = () => {
                                         <Users className="text-brightBlue" size={24} />
                                     </div>
                                     <h3 className="text-navy font-black uppercase tracking-tight italic mb-2">Local Support</h3>
-                                    <p className="text-navy/50 text-sm leading-relaxed">
+                                    <p className="text-navy/70 text-sm leading-relaxed">
                                         As a new local business, every client becomes part of our founding story.
                                     </p>
                                 </div>

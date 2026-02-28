@@ -65,7 +65,7 @@ const Hero: React.FC = () => {
               backgroundPosition: 'center',
             }}
           >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/50 via-black/20 to-navy/90" />
+            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-navy/70" />
           </div>
 
           <div
