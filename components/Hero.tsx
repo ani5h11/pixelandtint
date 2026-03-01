@@ -83,7 +83,7 @@ const Hero: React.FC = () => {
             <span className="text-white font-black uppercase tracking-[0.5em] text-[12px] mb-4 md:mb-6 inline-block">
               Pixel Perfect Tinting
             </span>
-            <p className="text-base md:text-3xl text-white/90 max-w-3xl mx-auto mb-10 md:mb-16 font-medium tracking-tight leading-snug">
+            <p className="text-base md:text-2xl text-white/90 max-w-3xl mx-auto mb-10 md:mb-16 font-medium tracking-tight leading-snug">
               Specialized window films for Australia's highest standards. Premium automotive window tinting for ultimate privacy, UV protection, and a cooler ride.
               <br />
               <span className="text-white/70 text-xs">Backed by a Lifetime Warranty.</span>
