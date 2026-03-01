@@ -85,6 +85,8 @@ const Hero: React.FC = () => {
             </span>
             <p className="text-base md:text-3xl text-white/90 max-w-3xl mx-auto mb-10 md:mb-16 font-medium tracking-tight leading-snug">
               Specialized window films for Australia's highest standards. Premium automotive window tinting for ultimate privacy, UV protection, and a cooler ride.
+              <br />
+              <span className="text-white/70 text-xs">Backed by a Lifetime Warranty.</span>
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
               <a

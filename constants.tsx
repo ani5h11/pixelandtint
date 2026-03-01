@@ -120,6 +120,10 @@ export const FAQS = [
     answer: "Yes. Professional window tinting provides a high ROI by preventing interior fading (preserving resale value), reducing energy costs by up to 30% in residential settings, and providing a shatter-resistant layer for enhanced glass safety."
   },
   {
+    question: "Is window tint legal in Tasmania?",
+    answer: "Yes, window tint is legal provided it meets the required light transmission limits. The front windscreen must allow at least 70% light (except for the top strip), front side windows at least 35%, and rear windows 20% or darker only if the vehicle has compliant side mirrors, with reflectance not exceeding 10%."
+  },
+  {
     question: "How does window tinting improve electric vehicle (EV) range?",
     answer: "Window tinting is a range extender for EVs. High-quality Ceramic Tint rejects up to 99% of infrared heat, significantly reducing the load on your air conditioning system. By keeping the cabin cooler naturally, your battery spends less energy on climate control, preserving more power for kilometers on the road."
   },
@@ -136,6 +140,10 @@ export const FAQS = [
     answer: "The lifespan depends on the material. Standard dyed films typically last 3–5 years, while carbon films last 7–10 years. Premium nano-ceramic and graphene-infused films are structurally permanent and often come with a lifetime warranty, lasting 15–20+ years without fading, bubbling, or turning purple."
   },
   {
+    question: "Do you provide any warranty?",
+    answer: "Yes, we provide a lifetime warranty on our products."
+  },
+  {
     question: "Can I roll down my windows immediately after tinting?",
     answer: "We recommend keeping your windows rolled up for at least 48 hours to allow the adhesive to cure properly and prevent the film from shifting."
   },
@@ -149,13 +157,10 @@ export const FAQS = [
     answer: "High-performance nano-ceramic window films block up to 98% of Infrared (IR) heat and 99.9% of UV rays. Unlike standard dyed films, ceramic technology reduces interior cabin temperatures by up to 25°F, significantly lowering the load on your AC system and extending EV battery range."
   },
   {
-    question: "DWhat is the best way to clean tinted windows without damaging them?",
+    question: "What is the best way to clean tinted windows without damaging them?",
     answer: "To preserve your tint, wait 3–5 days after installation before cleaning. Always use an ammonia-free cleaner and a clean microfiber cloth. Avoid paper towels or abrasive pads, which can create micro-scratches. Simple distilled water with a drop of mild dish soap is the safest and most effective solution."
   },
-  {
-    question: "Is window tint legal?",
-    answer: "Window tint laws vary by state and vehicle type. We ensure your tint complies with local regulations while still delivering the privacy and performance you want."
-  },
+
   {
     question: "Can window tint be removed?",
     answer: "Yes. Professional window tint can be safely removed without damaging the glass when handled by experienced technicians."

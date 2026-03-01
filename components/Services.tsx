@@ -56,14 +56,14 @@ const Services: React.FC = () => {
                 {/* Content Side */}
                 <div className="w-full md:w-1/2 p-8 md:p-16 lg:p-24 flex flex-col justify-center bg-white">
                   <div className="mb-6 md:mb-8 text-center md:text-left">
-                    <div className="flex justify-center md:justify-start items-center gap-4 mb-4">
+                    {/* <div className="flex justify-center md:justify-start items-center gap-4 mb-4">
                       <div className="bg-brightBlue/10 p-3 rounded-xl">
                         {React.cloneElement(service.icon as React.ReactElement<any>, { size: 32, className: 'text-brightBlue' })}
                       </div>
                       <span className="text-brightBlue font-bold text-lg md:text-2xl">
                         0{index + 1}.
                       </span>
-                    </div>
+                    </div> */}
                     <h3 className="text-3xl md:text-5xl lg:text-6xl font-black text-navy leading-none uppercase italic tracking-tighter">
                       {service.title}
                     </h3>
@@ -81,10 +81,13 @@ const Services: React.FC = () => {
                     </a>
                   </div>
 
-                  <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/30 group-hover:text-brightBlue transition-colors duration-500">
-                    <div className="h-px flex-1 bg-current opacity-20" />
-                    <span className="font-mono text-[10px] tracking-[0.3em] font-bold uppercase">Premium Shield</span>
+                  <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/50 group-hover:text-brightBlue transition-colors duration-500">
+                    <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+                      <img src="/assets/warrantylogo.webp" alt="Lifetime Warranty Logo" loading="lazy" className="w-full h-full object-fit rounded-xl" />
+                    </div>
+                    <span className="font-mono text-[10px] tracking-[0.3em] font-bold uppercase">Lifetime Warranty</span>
                   </div>
+
                 </div>
               </div>
             </div>
