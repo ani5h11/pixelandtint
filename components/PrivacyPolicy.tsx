@@ -71,7 +71,7 @@ const PrivacyPolicy: React.FC = () => {
                         </p>
                         <p className="font-bold mt-2">
                             Pixel & Tint<br />
-                            Email: hello@pixelandtint.com.au<br />
+                            Email: pixelandtintau@gmail.com<br />
                             Phone: 0450 216 892
                         </p>
                     </section>

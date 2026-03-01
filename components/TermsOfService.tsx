@@ -68,7 +68,7 @@ const TermsOfService: React.FC = () => {
                     <section>
                         <h2 className="text-2xl font-bold text-navy uppercase tracking-tight mb-4">9. Contact Information</h2>
                         <p>
-                            If you have any questions regarding these Terms of Service, please contact us at hello@pixelandtint.com.au.
+                            If you have any questions regarding these Terms of Service, please contact us at pixelandtintau@gmail.com.
                         </p>
                     </section>
 

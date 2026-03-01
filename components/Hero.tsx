@@ -56,26 +56,31 @@ const Hero: React.FC = () => {
           }}
         >
           {/* Receding Background */}
-          <div
-            className="absolute inset-0 z-0"
-            style={{
-              transform: `scale(${bgScale})`,
-              backgroundImage: `url('/assets/heroimage.webp')`,
-              backgroundSize: 'cover',
-              backgroundPosition: 'center',
-            }}
-          >
-            <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-navy/70" />
+          <div className="absolute inset-0 z-0" style={{ aspectRatio: '16/9', width: '100%', height: '100%' }}>
+            <div
+              style={{
+                transform: `scale(${bgScale})`,
+                backgroundImage: `url('/assets/heroimage.webp')`,
+                backgroundSize: 'cover',
+                backgroundPosition: 'center',
+                width: '100%',
+                height: '100%',
+              }}
+            >
+              <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-navy/70" />
+            </div>
           </div>
+
 
           <div
             className="relative z-10 text-center px-6 max-w-5xl mx-auto flex flex-col justify-center h-full pt-20 md:pt-32 transition-all duration-150"
-          // style={{
-          //   transform: `scale(${contentScale})`,
-          //   opacity: Math.max(0, contentOpacity),
-          //   transformOrigin: 'center center'
-          // }}
-          >
+            style={{
+              transform: `scale(${contentScale})`,
+              opacity: Math.max(0, contentOpacity),
+              transformOrigin: 'center center',
+              willChange: 'transform, opacity', // GPU acceleration
+            }}>
+
             <h1 className="text-[20vw] sm:text-[15vw] md:text-[11.4rem] font-black text-white leading-[0.85] md:leading-[0.8] mb-8 md:mb-12 tracking-tighter uppercase italic">
               Get <br />
               <span className="text-brightBlue">Tinted.</span>
