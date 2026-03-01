@@ -60,11 +60,13 @@ const Hero: React.FC = () => {
             <div
               style={{
                 transform: `scale(${bgScale})`,
-                backgroundImage: `url('/assets/heroimage.webp')`,
+                backgroundImage: `url('/assets/heroimage-low.webp'), url('/assets/heroimage.webp')`,
                 backgroundSize: 'cover',
                 backgroundPosition: 'center',
                 width: '100%',
                 height: '100%',
+                imageRendering: 'optimizeSpeed',
+                transition: 'background-image 0.3s ease-out', // smooth swap
               }}
             >
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-navy/70" />
