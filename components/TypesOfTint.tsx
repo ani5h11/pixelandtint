@@ -141,7 +141,7 @@ const TypesOfTint: React.FC = () => {
                 {(Object.keys(TINT_DATA) as TintKey[]).map((key) => (
                   <p
                     key={key}
-                    className={`absolute inset-0 text-white/60 text-base lg:text-lg leading-relaxed font-medium transition-all duration-700 ${active === key ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
+                    className={`absolute inset-0 text-white/70 text-base lg:text-lg leading-relaxed font-medium transition-all duration-700 ${active === key ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
                       }`}
                   >
                     {TINT_DATA[key].description}
@@ -273,7 +273,7 @@ const TypesOfTint: React.FC = () => {
                       }`}>
                       {data.name}
                     </span>
-                    <span className="text-white/40 font-mono text-[12px] lg:text-[14px] uppercase tracking-widest">Starts from ${data.price}</span>
+                    <span className="text-white/60 font-mono text-[12px] lg:text-[14px] uppercase tracking-widest">Starts from ${data.price}</span>
                   </div>
                   <div className="flex items-center gap-2 lg:gap-6">
                     <div className="h-1 w-16 lg:w-32 bg-white/10 rounded-full relative overflow-hidden">

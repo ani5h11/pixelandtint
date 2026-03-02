@@ -56,19 +56,24 @@ const Hero: React.FC = () => {
           }}
         >
           {/* Receding Background */}
-          <div className="absolute inset-0 z-0" style={{ aspectRatio: '16/9', width: '100%', height: '100%' }}>
+          <div className="absolute inset-0 z-0 overflow-hidden">
             <div
               style={{
                 transform: `scale(${bgScale})`,
-                backgroundImage: `url('/assets/heroimage-low.webp'), url('/assets/heroimage.webp')`,
-                backgroundSize: 'cover',
-                backgroundPosition: 'center',
                 width: '100%',
                 height: '100%',
-                imageRendering: 'optimizeSpeed',
-                transition: 'background-image 0.3s ease-out', // smooth swap
+                willChange: 'transform',
               }}
             >
+              <img
+                src="/assets/heroimage-low.webp"
+                srcSet="/assets/heroimage-low.webp 800w, /assets/heroimage.webp 1920w"
+                sizes="100vw"
+                alt="Premium automotive window tinting"
+                fetchPriority="high"
+                decoding="async"
+                className="w-full h-full object-cover"
+              />
               <div className="absolute inset-0 bg-gradient-to-b from-black/30 via-black/10 to-navy/70" />
             </div>
           </div>
@@ -92,7 +97,7 @@ const Hero: React.FC = () => {
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 md:gap-8">
               <a
-                href="#contact"
+                href="/contact"
                 className="w-full sm:w-auto group relative px-8 py-5 md:px-14 md:py-7 bg-brightBlue text-white font-black rounded-full overflow-hidden transition-all text-xs md:text-sm tracking-[0.2em] uppercase shadow-2xl"
               >
                 <span className="relative z-10">Request Quote</span>

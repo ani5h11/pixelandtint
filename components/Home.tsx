@@ -11,7 +11,6 @@ const About = lazy(() => import('./About'));
 const Services = lazy(() => import('./Services'));
 const Testimonials = lazy(() => import('./Testimonials'));
 const FAQPreview = lazy(() => import('./FAQPreview'));
-const Contact = lazy(() => import('./Contact'));
 
 const SectionLoader = () => (
     <div className="flex h-64 w-full items-center justify-center bg-canvas">
@@ -32,7 +31,6 @@ const Home: React.FC = () => {
                 <Services />
                 <Testimonials />
                 <FAQPreview />
-                <Contact />
             </Suspense>
         </main>
     );

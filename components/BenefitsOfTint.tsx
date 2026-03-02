@@ -113,7 +113,7 @@ const BenefitsOfTint: React.FC = () => {
             </div>
             <div className="flex flex-col items-center gap-6 md:gap-8">
               <a
-                href="#contact"
+                href="/contact"
                 className="w-full sm:w-auto px-10 py-5 bg-brightBlue hover:bg-white hover:text-navy text-white rounded-full text-[10px] md:text-xs font-black uppercase tracking-[0.2em] transition-all shadow-2xl active:scale-95 group/btn flex items-center justify-center gap-4"
               >
                 Protect My Asset

@@ -74,7 +74,7 @@ const Services: React.FC = () => {
 
                   <div className="mt-10 md:mt-16 flex items-center justify-center md:justify-start">
                     <a
-                      href="#contact"
+                      href="/contact"
                       className="px-8 py-4 bg-brightBlue hover:bg-navy text-white rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-xl active:scale-95"
                     >
                       Get a Quote

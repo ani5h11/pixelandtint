@@ -1,7 +1,7 @@
 
 import React, { useState, useEffect, useCallback } from 'react';
 import { Menu, X } from 'lucide-react';
-import { useNavigate, useLocation } from 'react-router-dom';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -61,8 +61,7 @@ const Navbar: React.FC = () => {
         { id: 'types', label: '03' },
         { id: 'about', label: '04' },
         { id: 'services', label: '05' },
-        { id: 'testimonials', label: '06' },
-        { id: 'contact', label: '07' }
+        { id: 'testimonials', label: '06' }
       ];
 
       for (let i = sections.length - 1; i >= 0; i--) {
@@ -80,7 +79,7 @@ const Navbar: React.FC = () => {
     return () => window.removeEventListener('scroll', handleScroll);
   }, [isHomePage]);
 
-  const steps = ['01', '02', '03', '04', '05', '06', '07'];
+  const steps = ['01', '02', '03', '04', '05', '06'];
 
   return (
     <nav className={`fixed top-0 left-0 w-full z-[100] transition-all duration-500 ${isScrolled || !isHomePage ? 'py-4 bg-white/80 backdrop-blur-md shadow-sm' : 'py-10 bg-transparent'
@@ -160,14 +159,13 @@ const Navbar: React.FC = () => {
             >
               Reviews
             </a>
-            <a
-              href="/#contact"
-              onClick={(e) => scrollTo(e, 'contact')}
-              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '07' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+            <Link
+              to="/contact"
+              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${location.pathname === '/contact' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
                 }`}
             >
               Contact
-            </a>
+            </Link>
           </div>
         </div>
 
@@ -193,7 +191,7 @@ const Navbar: React.FC = () => {
           <a href="/#services" onClick={(e) => scrollTo(e, 'services')} className="text-3xl font-black text-white italic tracking-tighter uppercase hover:text-brightBlue transition-colors">SERVICES</a>
           <a href="/#testimonials" onClick={(e) => scrollTo(e, 'testimonials')} className="text-3xl font-black text-white italic tracking-tighter uppercase hover:text-brightBlue transition-colors">REVIEWS</a>
           <div className="h-px w-20 bg-brightBlue/30" />
-          <a href="/#contact" onClick={(e) => scrollTo(e, 'contact')} className="text-2xl font-black text-brightBlue uppercase tracking-widest hover:text-white transition-colors">GET QUOTE</a>
+          <Link to="/contact" onClick={() => setIsMobileMenuOpen(false)} className="text-2xl font-black text-brightBlue uppercase tracking-widest hover:text-white transition-colors">GET QUOTE</Link>
         </div>
       )}
     </nav>

@@ -72,6 +72,16 @@ const FAQPreview: React.FC = () => {
                                 </div>
                             </div>
                         ))}
+
+                        <div className="mt-10 md:mt-16 flex items-center justify-center md:justify-start">
+                            <a
+                                href="/contact"
+                                className="w-full sm:w-auto group relative px-8 py-6 md:px-14 md:py-8 bg-brightBlue text-center text-white font-black rounded-full overflow-hidden transition-all text-xs md:text-sm tracking-[0.2em] uppercase shadow-2xl"
+                            >
+                                <span className="relative z-10">Book an Appointment</span>
+                                <div className="absolute inset-0 bg-navy transition-transform duration-500 transform scale-x-0 group-hover:scale-x-100 origin-left" />
+                            </a>
+                        </div>
                     </div>
 
                     <div className="relative h-full min-h-[400px] rounded-3xl overflow-hidden group">
@@ -86,7 +96,9 @@ const FAQPreview: React.FC = () => {
                             <h3 className="text-2xl font-bold mb-2">Pure Protection</h3>
                             <p className="text-white/70">Expert window tinting delivered with precision.</p>
                         </div>
+
                     </div>
+
                 </div>
             </div>
         </section>
