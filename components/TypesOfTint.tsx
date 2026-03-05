@@ -1,4 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState } from 'react';
 import { ShieldCheck, ThermometerSnowflake, Eye, Sun, Gauge, Flame } from 'lucide-react';
 
 const TINT_DATA = {
@@ -47,42 +47,15 @@ type TintKey = keyof typeof TINT_DATA;
 
 const TypesOfTint: React.FC = () => {
   const [active, setActive] = useState<TintKey>('classic');
-  const sectionRef = useRef<HTMLElement>(null);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (!sectionRef.current) return;
 
-      const rect = sectionRef.current.getBoundingClientRect();
-      const viewHeight = window.innerHeight;
-      const sectionHeight = rect.height;
-
-      const scrollDistance = -rect.top;
-      const totalScrollableDistance = sectionHeight - viewHeight;
-      const progress = Math.min(Math.max(scrollDistance / totalScrollableDistance, 0), 1);
-
-      // Determine active series based on scroll progress (3 segments)
-      if (progress < 0.33) {
-        setActive('classic');
-      } else if (progress < 0.66) {
-        setActive('ceramic');
-      } else {
-        setActive('nanoCeramic');
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
 
   const data = TINT_DATA[active];
 
   return (
     <section
       id="types"
-      ref={sectionRef}
-      className="relative bg-navy overflow-visible min-h-[300vh] lg:min-h-[350vh]"
+      className="relative bg-navy overflow-visible py-16 lg:py-24"
     >
       {/* Decorative tech background */}
       <div className="absolute inset-0 grid-bg opacity-10 pointer-events-none" />
@@ -90,7 +63,7 @@ const TypesOfTint: React.FC = () => {
       <div className="absolute bottom-0 left-0 w-full h-px bg-gradient-to-r from-transparent via-brightBlue/50 to-transparent" />
 
       {/* Sticky container */}
-      <div className="sticky top-0 h-screen flex items-center overflow-hidden">
+      <div className="flex items-center overflow-hidden">
         {/* Adjusted padding to help with centering and visibility on mobile */}
         <div className="max-w-7xl mx-auto px-6 w-full relative z-10 py-8 md:py-16">
           <div className="flex flex-col lg:flex-row gap-6 lg:gap-16 items-center">

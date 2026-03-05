@@ -13,9 +13,12 @@ const Footer: React.FC = () => {
           <div className="col-span-1 md:col-span-1">
             <div className="flex items-center space-x-2 mb-6">
               <img src="/assets/mainLogo.webp" alt="Logo" className="w-12 h-12 object-fit rounded-sm flex-shrink-0" />
-              <span className="text-2xl font-bold tracking-tight uppercase">
-                PIXEL & <span className="text-brightBlue">TINT</span>
-              </span>
+              <div className="flex flex-col">
+                <span className="text-2xl font-bold tracking-tight uppercase">
+                  PIXEL & <span className="text-brightBlue">TINT</span>
+                </span>
+                <span className="text-white/80 font-light text-sm">ABN: 96 886 476 568</span>
+              </div>
             </div>
             <p className="text-white/80 leading-relaxed mb-6">
               Tasmania’s premier window tinting service. We combine precision craftsmanship with the latest film technology for unparalleled results. Affordable and professional window tinting services across Launceston and surrounding areas.
@@ -34,8 +37,8 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="font-bold text-lg mb-6 text-lightAqua uppercase tracking-widest text-sm">Quick Links</h4>
             <ul className="space-y-4 text-white/80">
-              <li><a href="#services" className="hover:text-white transition-colors">Automotive Tinting</a></li>
-              <li><a href="#services" className="hover:text-white transition-colors">Residential Tinting</a></li>
+              <li><Link to="/services/automotive-tinting" className="hover:text-white transition-colors">Automotive Tinting</Link></li>
+              <li><Link to="/services/residential-tinting" className="hover:text-white transition-colors">Residential Tinting</Link></li>
               {/* <li><a href="#services" className="hover:text-white transition-colors">Commercial Tinting</a></li> */}
               <li><a href="/terms" className="hover:text-white transition-colors">Warranty Information</a></li>
               {/* <li><a href="#services" className="hover:text-white transition-colors">Safety & Security</a></li> */}

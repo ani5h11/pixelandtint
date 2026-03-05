@@ -11,6 +11,8 @@ const FAQ = lazy(() => import('./components/FAQ'));
 const Contact = lazy(() => import('./components/Contact'));
 const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
 const TermsOfService = lazy(() => import('./components/TermsOfService'));
+const AutomotiveTintingPage = lazy(() => import('./components/AutomotiveTintingPage'));
+const ResidentialTintingPage = lazy(() => import('./components/ResidentialTintingPage'));
 
 const ScrollToTop: React.FC = () => {
   const location = useLocation();
@@ -40,6 +42,8 @@ const App: React.FC = () => {
             <Route path="/faq" element={<FAQ />} />
             <Route path="/privacy" element={<PrivacyPolicy />} />
             <Route path="/terms" element={<TermsOfService />} />
+            <Route path="/services/automotive-tinting" element={<AutomotiveTintingPage />} />
+            <Route path="/services/residential-tinting" element={<ResidentialTintingPage />} />
           </Routes>
         </Suspense>
         <Footer />

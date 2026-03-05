@@ -1,6 +1,12 @@
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { SERVICES } from '../constants';
+
+const SERVICE_SLUGS: Record<string, string> = {
+  'Automotive Tinting': '/services/automotive-tinting',
+  'Residential Tinting': '/services/residential-tinting',
+};
 
 const Services: React.FC = () => {
   return (
@@ -72,13 +78,21 @@ const Services: React.FC = () => {
                     {service.description}
                   </p>
 
-                  <div className="mt-10 md:mt-16 flex items-center justify-center md:justify-start">
+                  <div className="mt-10 md:mt-16 flex flex-wrap items-center justify-center md:justify-start gap-4">
                     <a
                       href="/contact"
                       className="px-8 py-4 bg-brightBlue hover:bg-navy text-white rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-xl active:scale-95"
                     >
                       Get a Quote
                     </a>
+                    {SERVICE_SLUGS[service.title] && (
+                      <Link
+                        to={SERVICE_SLUGS[service.title]}
+                        className="px-8 py-4 bg-navy/5 hover:bg-navy text-navy hover:text-white rounded-full text-xs font-black uppercase tracking-widest transition-all border border-navy/10"
+                      >
+                        Learn More
+                      </Link>
+                    )}
                   </div>
 
                   <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/50 group-hover:text-brightBlue transition-colors duration-500">
