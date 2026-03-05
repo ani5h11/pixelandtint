@@ -1,6 +1,7 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import { Link } from 'react-router-dom';
 import { ShieldCheck, Sun, ThermometerSnowflake, UserCheck, Eye, Zap } from 'lucide-react';
+import { usePageMeta } from './seo';
 
 const TypesOfTint = lazy(() => import('./TypesOfTint'));
 const TintDarknessVisualizer = lazy(() => import('./TintDarknessVisualizer'));
@@ -51,12 +52,12 @@ const AUTO_BENEFITS = [
 ];
 
 const AutomotiveTintingPage: React.FC = () => {
+    usePageMeta({
+        title: 'Automotive Window Tinting Launceston | Car Tint from $249 — Pixel & Tint',
+        description: 'Professional automotive window tinting in Launceston, Tasmania. Classic, Ceramic & Nano Ceramic car tint films starting from $249. UV protection, heat rejection & lifetime warranty.',
+        canonical: 'https://pixelandtint.com.au/services/automotive-tinting',
+    });
     useEffect(() => {
-        document.title = 'Automotive Window Tinting Launceston | Car Tint from $249 — Pixel & Tint';
-        const meta = document.querySelector('meta[name="description"]');
-        if (meta) {
-            meta.setAttribute('content', 'Professional automotive window tinting in Launceston, Tasmania. Classic, Ceramic & Nano Ceramic car tint films starting from $249. UV protection, heat rejection & lifetime warranty.');
-        }
 
         // JSON-LD structured data
         const script = document.createElement('script');

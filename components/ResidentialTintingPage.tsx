@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Sun, ThermometerSnowflake, Eye, Zap, ShieldCheck, Home } from 'lucide-react';
+import { usePageMeta } from './seo';
 
 const RESIDENTIAL_BENEFITS = [
     {
@@ -42,12 +43,12 @@ const RESIDENTIAL_BENEFITS = [
 ];
 
 const ResidentialTintingPage: React.FC = () => {
+    usePageMeta({
+        title: 'Residential Window Tinting Launceston | Home Tint — Pixel & Tint',
+        description: 'Professional residential window tinting in Launceston, Tasmania. Reduce heat, block UV rays, enhance privacy and cut energy costs. Lifetime warranty on all installations.',
+        canonical: 'https://pixelandtint.com.au/services/residential-tinting',
+    });
     useEffect(() => {
-        document.title = 'Residential Window Tinting Launceston | Home Tint — Pixel & Tint';
-        const meta = document.querySelector('meta[name="description"]');
-        if (meta) {
-            meta.setAttribute('content', 'Professional residential window tinting in Launceston, Tasmania. Reduce heat, block UV rays, enhance privacy and cut energy costs. Lifetime warranty on all installations.');
-        }
 
         const script = document.createElement('script');
         script.type = 'application/ld+json';

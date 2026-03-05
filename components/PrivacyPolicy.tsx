@@ -1,6 +1,12 @@
 import React from 'react';
+import { usePageMeta } from './seo';
 
 const PrivacyPolicy: React.FC = () => {
+    usePageMeta({
+        title: 'Privacy Policy | Pixel & Tint',
+        description: 'Read the privacy policy for Pixel & Tint. Learn how we collect, use, and protect your personal information.',
+        canonical: 'https://pixelandtint.com.au/privacy',
+    });
     return (
         <div className="min-h-screen bg-white pt-32 pb-24">
             <div className="max-w-4xl mx-auto px-6 sm:px-8">

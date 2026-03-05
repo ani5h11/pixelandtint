@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { Mail, Phone, MapPin, Send, Clock, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { CONTACTS } from '@/constants';
+import { usePageMeta } from './seo';
 
 const Contact: React.FC = () => {
+  usePageMeta({
+    title: 'Contact Us | Pixel & Tint Launceston',
+    description: 'Get a free window tinting quote from Pixel & Tint in Launceston, Tasmania. Contact us for automotive, residential, and commercial tinting services.',
+    canonical: 'https://pixelandtint.com.au/contact',
+  });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitStatus, setSubmitStatus] = useState<'idle' | 'success' | 'error'>('idle');
   const [formData, setFormData] = useState({

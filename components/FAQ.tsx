@@ -1,8 +1,14 @@
 import React, { useState } from 'react';
 import { Plus, Minus } from 'lucide-react';
 import { FAQS } from '../constants';
+import { usePageMeta } from './seo';
 
 const FAQ: React.FC = () => {
+    usePageMeta({
+        title: 'FAQ | Pixel & Tint — Window Tinting Questions',
+        description: 'Frequently asked questions about window tinting services at Pixel & Tint Launceston. Learn about our films, processes, pricing, and aftercare.',
+        canonical: 'https://pixelandtint.com.au/faq',
+    });
     const [openIndex, setOpenIndex] = useState<number | null>(null);
 
     const toggleFAQ = (index: number) => {

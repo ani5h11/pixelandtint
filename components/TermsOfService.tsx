@@ -1,6 +1,12 @@
 import React from 'react';
+import { usePageMeta } from './seo';
 
 const TermsOfService: React.FC = () => {
+    usePageMeta({
+        title: 'Terms of Service | Pixel & Tint',
+        description: 'Terms of service for Pixel & Tint window tinting services in Launceston, Tasmania.',
+        canonical: 'https://pixelandtint.com.au/terms',
+    });
     return (
         <div className="min-h-screen bg-white pt-32 pb-24">
             <div className="max-w-4xl mx-auto px-6 sm:px-8">

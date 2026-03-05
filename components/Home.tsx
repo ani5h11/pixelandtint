@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import Hero from './Hero';
+import { usePageMeta } from './seo';
 // Lazy load below-the-fold components for performance
 const BenefitsOfTint = lazy(() => import('./BenefitsOfTint'));
 const AboutUs = lazy(() => import('./AboutUs'));
@@ -19,6 +20,11 @@ const SectionLoader = () => (
 );
 
 const Home: React.FC = () => {
+    usePageMeta({
+        title: 'Pixel & Tint | Premium Automotive & Home Tint Launceston',
+        description: 'Premium window tinting services in Launceston, Tasmania. Expert automotive, residential, and commercial tinting with high-end craftsmanship by Pixel & Tint.',
+        canonical: 'https://pixelandtint.com.au/',
+    });
     return (
         <main>
             <Hero />
