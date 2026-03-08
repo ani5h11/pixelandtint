@@ -64,7 +64,7 @@ const TintDarknessVisualizer: React.FC = () => {
                                             <span className={`text-xl lg:text-4xl font-black italic ${selectedVlt === level.vlt ? 'text-white' : 'text-navy'}`}>
                                                 {level.vlt}%
                                             </span>
-                                            <span className={`text-[8px] lg:text-sm font-bold uppercase tracking-widest ${selectedVlt === level.vlt ? 'text-brightBlue' : 'text-navy/40'}`}>
+                                            <span className={`text-[8px] lg:text-sm font-bold uppercase tracking-widest ${selectedVlt === level.vlt ? 'text-brightBlue' : 'text-navy/90'}`}>
                                                 {level.name}
                                             </span>
                                         </div>

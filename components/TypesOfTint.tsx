@@ -114,7 +114,7 @@ const TypesOfTint: React.FC = () => {
                 {(Object.keys(TINT_DATA) as TintKey[]).map((key) => (
                   <p
                     key={key}
-                    className={`absolute inset-0 text-white/70 text-base lg:text-lg leading-relaxed font-medium transition-all duration-700 ${active === key ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
+                    className={`absolute inset-0 text-white/80 text-base lg:text-lg leading-relaxed font-medium transition-all duration-700 ${active === key ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8 pointer-events-none'
                       }`}
                   >
                     {TINT_DATA[key].description}
@@ -139,7 +139,7 @@ const TypesOfTint: React.FC = () => {
                         <Flame className="text-brightBlue" size={16} />
                       </div>
                       <div>
-                        <h4 className="text-white font-black uppercase tracking-widest text-[7px] lg:text-[10px] opacity-40">Total Heat (TSER)</h4>
+                        <h4 className="text-white font-black uppercase tracking-widest text-[10px] opacity-40">Total Heat (TSER)</h4>
                         <p className="text-base lg:text-2xl font-black text-white italic tabular-nums">{data.heat}%</p>
                       </div>
                     </div>
@@ -159,7 +159,7 @@ const TypesOfTint: React.FC = () => {
                         <ThermometerSnowflake className="text-brightBlue" size={16} />
                       </div>
                       <div>
-                        <h4 className="text-white font-black uppercase tracking-widest text-[7px] lg:text-[10px] opacity-40">Infrared (IRR)</h4>
+                        <h4 className="text-white font-black uppercase tracking-widest text-[10px] opacity-40">Infrared (IRR)</h4>
                         <p className="text-base lg:text-2xl font-black text-white italic tabular-nums">{data.ir}%</p>
                       </div>
                     </div>
@@ -179,7 +179,7 @@ const TypesOfTint: React.FC = () => {
                         <ShieldCheck className="text-brightBlue" size={16} />
                       </div>
                       <div>
-                        <h4 className="text-white font-black uppercase tracking-widest text-[7px] lg:text-[10px] opacity-40">UV Protection</h4>
+                        <h4 className="text-white font-black uppercase tracking-widest text-[10px] opacity-40">UV Protection</h4>
                         <p className="text-base lg:text-2xl font-black text-white italic tabular-nums">{data.uv}%</p>
                       </div>
                     </div>
@@ -199,7 +199,7 @@ const TypesOfTint: React.FC = () => {
                         <Sun className="text-brightBlue" size={16} />
                       </div>
                       <div>
-                        <h4 className="text-white font-black uppercase tracking-widest text-[7px] lg:text-[10px] opacity-40">Light (VLT)</h4>
+                        <h4 className="text-white font-black uppercase tracking-widest text-[10px] opacity-40">Light (VLT)</h4>
                         <p className="text-base lg:text-2xl font-black text-white italic">{data.vlt}%</p>
                       </div>
                     </div>
@@ -219,7 +219,7 @@ const TypesOfTint: React.FC = () => {
                         <Gauge className="text-brightBlue" size={16} />
                       </div>
                       <div>
-                        <h4 className="text-white font-black uppercase tracking-widest text-[7px] lg:text-[10px] opacity-40">Optical Clarity</h4>
+                        <h4 className="text-white font-black uppercase tracking-widest text-[10px] opacity-40">Optical Clarity</h4>
                         <p className="text-base lg:text-2xl font-black text-white italic">{data.clarity}</p>
                       </div>
                     </div>
@@ -241,12 +241,12 @@ const TypesOfTint: React.FC = () => {
                 {/* Central Comparison Divider / Highlight */}
                 <div className="mt-8 lg:mt-12 pt-4 lg:pt-8 border-t border-white/10 flex flex-row items-center justify-between gap-4 lg:gap-8">
                   <div className="flex flex-col items-start">
-                    <span className="text-white/40 font-mono text-[7px] lg:text-[9px] uppercase tracking-widest mb-0.5">Active Tier</span>
+                    <span className="text-white/40 font-mono text-[10px] uppercase tracking-widest mb-0.5">Active Tier</span>
                     <span className={`text-xs lg:text-2xl font-black italic uppercase tracking-tighter transition-colors duration-700 ${active === 'nanoCeramic' ? 'text-lightAqua' : active === 'ceramic' ? 'text-brightBlue' : 'text-white'
                       }`}>
                       {data.name}
                     </span>
-                    <span className="text-white/60 font-mono text-[12px] lg:text-[14px] uppercase tracking-widest">Starts from ${data.price}</span>
+                    <span className="text-white/60 font-mono text-[10px] uppercase tracking-widest">Starts from ${data.price}</span>
                   </div>
                   <div className="flex items-center gap-2 lg:gap-6">
                     <div className="h-1 w-16 lg:w-32 bg-white/10 rounded-full relative overflow-hidden">
@@ -255,7 +255,7 @@ const TypesOfTint: React.FC = () => {
                           }`}
                       />
                     </div>
-                    <span className="text-[7px] lg:text-[10px] font-mono font-bold text-white/40 uppercase tracking-widest">
+                    <span className="text-[10px] font-mono font-bold text-white/40 uppercase tracking-widest">
                       {data.id}/03
                     </span>
                   </div>

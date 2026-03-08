@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Mail, Phone, MapPin, Send, Clock, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
+import { Mail, MessageSquare, MapPin, Send, Clock, CheckCircle2, AlertCircle, Loader2 } from 'lucide-react';
 import { CONTACTS } from '@/constants';
 import { usePageMeta } from './seo';
 
@@ -20,6 +20,7 @@ const Contact: React.FC = () => {
     vehicleModel: '',
     vehicleYear: '',
     filmType: 'Ceramic',
+    tintRemoval: 'No',
     message: ''
   });
 
@@ -95,12 +96,12 @@ const Contact: React.FC = () => {
             </p>
 
             <div className="space-y-6">
-              <a href="tel:0450216892" className="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors group border border-white/5">
+              <a href="sms:0450216892" className="flex items-center space-x-4 p-4 rounded-2xl bg-white/5 hover:bg-white/10 transition-colors group border border-white/5">
                 <div className="bg-brightBlue p-3 rounded-xl text-white group-hover:scale-110 transition-transform shadow-lg">
-                  <Phone size={24} />
+                  <MessageSquare size={24} />
                 </div>
                 <div>
-                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest">Call Us</p>
+                  <p className="text-xs font-bold text-white/40 uppercase tracking-widest">Text Us</p>
                   <p className="text-lg font-bold text-white">{CONTACTS.phone}</p>
                 </div>
               </a>
@@ -285,6 +286,36 @@ const Contact: React.FC = () => {
                     </div>
                   </>
                 )}
+
+                <div>
+                  <span className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-4">
+                    Tint removal required?
+                  </span>
+                  <div className="flex gap-4">
+                    {['No', 'Yes'].map((option) => (
+                      <label
+                        key={option}
+                        className={`
+          flex-1 flex items-center justify-center cursor-pointer
+          py-4 px-5 rounded-xl border transition-all
+          ${formData.tintRemoval === option
+                            ? 'bg-brightBlue/20 border-brightBlue text-white'
+                            : 'bg-white/5 border-white/10 text-white/60 hover:border-white/20'}
+        `}
+                      >
+                        <input
+                          type="radio"
+                          name="tintRemoval"
+                          value={option}
+                          checked={formData.tintRemoval === option}
+                          onChange={handleChange}
+                          className="hidden" // Hiding the default radio dot for a cleaner button look
+                        />
+                        <span className="text-sm font-medium">{option}</span>
+                      </label>
+                    ))}
+                  </div>
+                </div>
 
                 <div>
                   <label htmlFor="message" className="block text-white/40 text-xs font-bold uppercase tracking-widest mb-2">Additional details</label>

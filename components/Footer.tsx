@@ -49,15 +49,15 @@ const Footer: React.FC = () => {
             <h4 className="font-bold text-lg mb-6 text-lightAqua uppercase tracking-widest text-sm">Contact Details</h4>
             <ul className="space-y-4 text-white/80">
               <li className="flex items-center space-x-3">
-                <span className="text-brightBlue font-bold">P:</span>
+                <span className="text-lightAqua font-bold">P:</span>
                 <span>{CONTACTS.phone}</span>
               </li>
               <li className="flex items-center space-x-3">
-                <span className="text-brightBlue font-bold">E:</span>
+                <span className="text-lightAqua font-bold">E:</span>
                 <span>{CONTACTS.email}</span>
               </li>
               <li className="flex items-center space-x-3">
-                <span className="text-brightBlue font-bold">A:</span>
+                <span className="text-lightAqua font-bold">A:</span>
                 <span>{CONTACTS.address}</span>
               </li>
             </ul>
@@ -70,19 +70,19 @@ const Footer: React.FC = () => {
             </p>
             <div className="flex flex-wrap items-center gap-4 text-navy/50 group-hover:text-brightBlue transition-colors duration-500">
 
-              <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-16 h-auto bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <img src="/assets/warrantylogo.webp" alt="Lifetime Warranty Logo" loading="lazy" className="w-full h-full object-fit rounded-xl" />
               </div>
 
-              <div className="w-14 h-16 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-auto bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <img src="/assets/blackarmour.webp" alt="Black Armour Logo" loading="lazy" className="w-full h-full object-fit rounded-xl" />
               </div>
 
-              <div className="w-14 h-16 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-auto bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <img src="/assets/Skincaref.webp" alt="Skin Care Foundation Logo" loading="lazy" className="w-full h-full object-fit rounded-xl" />
               </div>
 
-              <div className="w-40 h-12 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-40 h-auto bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <img src="/assets/arpansa.webp" alt="Arpansa Logo" loading="lazy" className="w-full h-full object-fit rounded-xl" />
               </div>
 

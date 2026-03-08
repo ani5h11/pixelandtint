@@ -85,17 +85,16 @@ const Services: React.FC = () => {
                     >
                       Get a Quote
                     </a>
-                    {SERVICE_SLUGS[service.title] && (
-                      <Link
-                        to={SERVICE_SLUGS[service.title]}
-                        className="px-8 py-4 bg-navy/5 hover:bg-navy text-navy hover:text-white rounded-full text-xs font-black uppercase tracking-widest transition-all border border-navy/10"
-                      >
-                        Learn More
-                      </Link>
-                    )}
+                    <Link
+                      to={SERVICE_SLUGS[service.title]}
+                      aria-label={`Learn more about ${service.title}`}
+                      className="px-8 py-4 bg-navy/5 hover:bg-navy text-navy hover:text-white rounded-full text-xs font-black uppercase tracking-widest transition-all border border-navy/10"
+                    >
+                      Learn More
+                    </Link>
                   </div>
 
-                  <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/50 group-hover:text-brightBlue transition-colors duration-500">
+                  <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/70 group-hover:text-brightBlue transition-colors duration-500">
                     <div className="w-16 h-16 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
                       <img src="/assets/warrantylogo.webp" alt="Lifetime Warranty Logo" loading="lazy" className="w-full h-full object-fit rounded-xl" />
                     </div>

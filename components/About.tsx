@@ -90,7 +90,7 @@ const About: React.FC = () => {
                     {step.description}
                   </p>
 
-                  <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/30 group-hover:text-brightBlue transition-colors duration-500">
+                  <div className="mt-10 md:mt-16 flex items-center gap-4 text-navy/70 group-hover:text-brightBlue transition-colors duration-500">
                     <div className="h-px flex-1 bg-current opacity-20" />
                     <span className="font-mono text-[10px] tracking-[0.3em] font-bold">PIXEL_PRECISION</span>
                   </div>

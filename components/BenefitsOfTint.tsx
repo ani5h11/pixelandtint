@@ -32,7 +32,7 @@ const BenefitsOfTint: React.FC = () => {
               {/* <div className="w-12 h-12 bg-navy rounded-full flex items-center justify-center">`
                 <div className="w-1.5 h-1.5 rounded-full bg-brightBlue animate-ping" />
               </div> */}
-              <div className="w-14 h-14 bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
+              <div className="w-14 h-auto bg-navy/10 rounded-full flex items-center justify-center flex-shrink-0">
                 <img src="/assets/Skincaref.webp" alt="Skin Care Foundation Logo" loading="lazy" className="w-full h-full object-fit rounded-xl" />
               </div>
 
