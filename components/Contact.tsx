@@ -296,12 +296,12 @@ const Contact: React.FC = () => {
                       <label
                         key={option}
                         className={`
-          flex-1 flex items-center justify-center cursor-pointer
-          py-4 px-5 rounded-xl border transition-all
-          ${formData.tintRemoval === option
+                        flex-1 flex items-center justify-center cursor-pointer
+                        py-4 px-5 rounded-xl border transition-all
+                        ${formData.tintRemoval === option
                             ? 'bg-brightBlue/20 border-brightBlue text-white'
                             : 'bg-white/5 border-white/10 text-white/60 hover:border-white/20'}
-        `}
+                      `}
                       >
                         <input
                           type="radio"
