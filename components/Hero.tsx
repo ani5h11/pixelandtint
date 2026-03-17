@@ -1,52 +1,61 @@
 
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 
 const Hero: React.FC = () => {
-  const [scrollY, setScrollY] = useState(0);
+  const containerRef = useRef<HTMLDivElement>(null);
+  const bgRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     let ticking = false;
     const handleScroll = () => {
       if (!ticking) {
         window.requestAnimationFrame(() => {
-          setScrollY(window.scrollY);
+          const scrollY = window.scrollY;
           ticking = false;
+
+          // Animation Progress: 0 to 1 over the first 1200px of scroll
+          const progress = Math.min(scrollY / 1200, 1);
+
+          // 1. Background Zoom Out: Starts at 1.5x and recedes to 1.0x
+          const bgScale = 1.5 - (progress * 0.5);
+
+          // 2. Section Transition: Receding Flipped Tab
+          const recedeStart = 0.05;
+          const recedeProgress = Math.max(0, (progress - recedeStart) / (1 - recedeStart));
+
+          // Entire container shrinks to ~85% size to look like a flipped tab
+          const containerScale = 1 - (recedeProgress * 0.15);
+          const borderRadius = recedeProgress * 48;
+          const translateY = recedeProgress * 80;
+          const rotateX = recedeProgress * -6;
+
+          if (containerRef.current) {
+            containerRef.current.style.transform = `scale(${containerScale}) translateY(${translateY}px) rotateX(${rotateX}deg)`;
+            containerRef.current.style.borderRadius = `${borderRadius}px`;
+          }
+
+          if (bgRef.current) {
+            bgRef.current.style.transform = `scale(${bgScale})`;
+          }
         });
         ticking = true;
       }
     };
+
+    // Set initial state
+    handleScroll();
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
-
-  // Animation Progress: 0 to 1 over the first 1200px of scroll
-  const progress = Math.min(scrollY / 1200, 1);
-
-  // 1. Background Zoom Out: Starts at 1.5x and recedes to 1.0x
-  const bgScale = 1.5 - (progress * 0.5);
-
-  // 2. Section Transition: Receding Flipped Tab
-  const recedeStart = 0.05;
-  const recedeProgress = Math.max(0, (progress - recedeStart) / (1 - recedeStart));
-
-  // Entire container shrinks to ~85% size to look like a flipped tab
-  const containerScale = 1 - (recedeProgress * 0.15);
-  const borderRadius = recedeProgress * 48;
-  const translateY = recedeProgress * 80;
-  const rotateX = recedeProgress * -6; // Perspective tilt for the "flipped" look
-
-  // 3. Content Scaling
-  const contentScale = 1 - (recedeProgress * 0.4);
-  const contentOpacity = 1 - (recedeProgress * 1.6);
 
   return (
     <section id="hero" className="relative h-[200vh] bg-transparent">
       <div className="sticky top-0 h-[100dvh] w-full flex items-center justify-center overflow-hidden z-20 pointer-events-none" style={{ perspective: '1000px' }}>
         <div
+          ref={containerRef}
           className="flipped-tab relative overflow-hidden shadow-[0_60px_120px_-30px_rgba(0,0,0,0.6)] bg-navy pointer-events-auto"
           style={{
-            transform: `scale(${containerScale}) translateY(${translateY}px) rotateX(${rotateX}deg)`,
-            borderRadius: `${borderRadius}px`,
             width: '100%',
             maxWidth: '100vw',
             height: '100dvh',
@@ -58,8 +67,8 @@ const Hero: React.FC = () => {
           {/* Receding Background */}
           <div className="absolute inset-0 z-0 overflow-hidden">
             <div
+              ref={bgRef}
               style={{
-                transform: `scale(${bgScale})`,
                 width: '100%',
                 height: '100%',
                 willChange: 'transform',

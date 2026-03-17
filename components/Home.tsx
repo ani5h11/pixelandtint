@@ -1,23 +1,15 @@
-import React, { Suspense, lazy } from 'react';
+import React from 'react';
 import Hero from './Hero';
 import { usePageMeta } from './seo';
-import LazySection from './LazySection';
 
-// Lazy load below-the-fold components for performance
-const BenefitsOfTint = lazy(() => import('./BenefitsOfTint'));
-const AboutUs = lazy(() => import('./AboutUs'));
-const TintDarknessVisualizer = lazy(() => import('./TintDarknessVisualizer'));
-const TypesOfTint = lazy(() => import('./TypesOfTint'));
-const About = lazy(() => import('./About'));
-const Services = lazy(() => import('./Services'));
-const Testimonials = lazy(() => import('./Testimonials'));
-const FAQPreview = lazy(() => import('./FAQPreview'));
-
-const SectionLoader = () => (
-    <div className="flex h-64 w-full items-center justify-center bg-canvas">
-        <div className="h-8 w-8 animate-spin rounded-full border-4 border-navy/10 border-t-brightBlue"></div>
-    </div>
-);
+import BenefitsOfTint from './BenefitsOfTint';
+import AboutUs from './AboutUs';
+import TintDarknessVisualizer from './TintDarknessVisualizer';
+import TypesOfTint from './TypesOfTint';
+import About from './About';
+import Services from './Services';
+import Testimonials from './Testimonials';
+import FAQPreview from './FAQPreview';
 
 const Home: React.FC = () => {
     usePageMeta({
@@ -29,32 +21,14 @@ const Home: React.FC = () => {
     return (
         <main>
             <Hero />
-            <Suspense fallback={<SectionLoader />}>
-                <LazySection fallback={<SectionLoader />}>
-                    <BenefitsOfTint />
-                </LazySection>
-                <LazySection fallback={<SectionLoader />}>
-                    <AboutUs />
-                </LazySection>
-                <LazySection fallback={<SectionLoader />}>
-                    <TintDarknessVisualizer />
-                </LazySection>
-                <LazySection fallback={<SectionLoader />}>
-                    <TypesOfTint />
-                </LazySection>
-                <LazySection fallback={<SectionLoader />}>
-                    <About />
-                </LazySection>
-                <LazySection fallback={<SectionLoader />}>
-                    <Services />
-                </LazySection>
-                <LazySection fallback={<SectionLoader />}>
-                    <Testimonials />
-                </LazySection>
-                <LazySection fallback={<SectionLoader />}>
-                    <FAQPreview />
-                </LazySection>
-            </Suspense>
+            <BenefitsOfTint />
+            <AboutUs />
+            <TintDarknessVisualizer />
+            <TypesOfTint />
+            <About />
+            <Services />
+            <Testimonials />
+            <FAQPreview />
         </main>
     );
 };
