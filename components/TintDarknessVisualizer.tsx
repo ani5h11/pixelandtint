@@ -45,7 +45,7 @@ const TintDarknessVisualizer: React.FC = () => {
                             <span className="text-brightBlue">Darkness</span>
                         </h2>
 
-                        <p className="text-navy/60 text-lg mb-10 leading-relaxed font-medium">
+                        <p className="text-navy/80 text-lg mb-10 leading-relaxed font-medium">
                             Window tint is measured by Visible Light Transmission (VLT). The lower the percentage, the darker the tint. Select a level to see the difference.
                         </p>
 
@@ -55,7 +55,7 @@ const TintDarknessVisualizer: React.FC = () => {
                                     key={level.vlt}
                                     onClick={() => setSelectedVlt(level.vlt)}
                                     className={`group relative flex flex-col lg:flex-row items-center justify-center lg:justify-between p-3 lg:p-6 rounded-xl lg:rounded-2xl border-2 transition-all duration-500 overflow-hidden ${selectedVlt === level.vlt
-                                        ? 'bg-navy border-navy text-white shadow-2xl scale-[1.02]'
+                                        ? 'bg-brightBlue border-navy/20 text-white shadow-2xl scale-[1.02]'
                                         : 'bg-white border-navy/5 text-navy hover:border-navy/20'
                                         }`}
                                 >
@@ -64,14 +64,14 @@ const TintDarknessVisualizer: React.FC = () => {
                                             <span className={`text-xl lg:text-4xl font-black italic ${selectedVlt === level.vlt ? 'text-white' : 'text-navy'}`}>
                                                 {level.vlt}%
                                             </span>
-                                            <span className={`text-[8px] lg:text-sm font-bold uppercase tracking-widest ${selectedVlt === level.vlt ? 'text-brightBlue' : 'text-navy/90'}`}>
+                                            <span className={`text-[8px] lg:text-sm font-bold uppercase tracking-widest ${selectedVlt === level.vlt ? 'text-white' : 'text-navy/90'}`}>
                                                 {level.name}
                                             </span>
                                         </div>
                                     </div>
                                     <div className="relative z-10 hidden lg:block">
                                         {selectedVlt === level.vlt ? (
-                                            <Eye className="text-brightBlue animate-pulse" size={24} />
+                                            <Eye className="text-navy animate-pulse" size={24} />
                                         ) : (
                                             <EyeOff className="text-navy/20 group-hover:text-navy/40 transition-colors" size={24} />
                                         )}

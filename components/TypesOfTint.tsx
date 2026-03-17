@@ -95,7 +95,7 @@ const TypesOfTint: React.FC = () => {
                         <h3 className={`text-[16px] sm:text-[14px] lg:text-lg font-black uppercase italic tracking-tight ${active === key ? 'text-navy' : 'text-white'}`}>
                           {TINT_DATA[key].name.split(' ')[0]} <span className="hidden sm:inline">{TINT_DATA[key].name.split(' ')[1]}</span>
                         </h3>
-                        <p className={`text-[6px] lg:text-[9px] font-bold uppercase tracking-widest lg:block ${active === key ? 'text-navy/40' : 'text-white/40'}`}>
+                        <p className={`text-[6px] lg:text-[9px] font-bold uppercase tracking-widest lg:block ${active === key ? 'text-navy/80' : 'text-white/40'}`}>
                           {TINT_DATA[key].tagline}
                         </p>
                       </div>
