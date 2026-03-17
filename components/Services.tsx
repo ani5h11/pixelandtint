@@ -90,7 +90,7 @@ const Services: React.FC = () => {
                       aria-label={`Learn more about ${service.title}`}
                       className="px-8 py-4 bg-navy/5 hover:bg-navy text-navy hover:text-white rounded-full text-xs font-black uppercase tracking-widest transition-all border border-navy/10"
                     >
-                      Learn More
+                      Learn More <span className="sr-only"> about {service.title}</span>
                     </Link>
                   </div>
 
