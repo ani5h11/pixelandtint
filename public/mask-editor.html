@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>SVG Mask Editor</title>
+    <style>
+        body {
+            margin: 0;
+            background: #111;
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 40px 20px;
+        }
+
+        h2 {
+            margin-top: 0;
+            color: #4facfe;
+        }
+
+        .container {
+            position: relative;
+            width: 800px;
+            height: 450px;
+            /* 16:9 aspect ratio to match visualizer */
+            border: 2px solid #333;
+            margin-bottom: 20px;
+            overflow: hidden;
+            cursor: crosshair;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            border-radius: 8px;
+        }
+
+        .bg-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        svg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .controls {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        textarea {
+            width: 800px;
+            height: 80px;
+            font-family: monospace;
+            padding: 15px;
+            background: #1a1a1a;
+            color: #4facfe;
+            border: 1px solid #333;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: none;
+        }
+
+        button {
+            padding: 10px 20px;
+            background: #2a2a2a;
+            color: white;
+            border: 1px solid #444;
+            border-radius: 6px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-weight: bold;
+        }
+
+        button:hover {
+            background: #4facfe;
+            border-color: #4facfe;
+            color: #000;
+        }
+
+        .instructions {
+            background: #222;
+            padding: 15px 25px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            border-left: 4px solid #4facfe;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>Tint Mask Polygon Editor</h2>
+
+    <div class="instructions">
+        <strong>How to use:</strong>
+        <ol>
+            <li>Click points on the car windows to trace their shape perfectly.</li>
+            <li>Press <strong>Close Path</strong> when you finish outlining a window (e.g. front window).</li>
+            <li>Start clicking again to draw the next window (e.g. rear window).</li>
+            <li>Copy the generated SVG code and paste it into <code>WINDOW_MASK_PATH</code> in
+                <code>TintDarknessVisualizer.tsx</code>.</li>
+        </ol>
+    </div>
+
+    <div class="controls">
+        <button onclick="undo()">Undo Last Point</button>
+        <button onclick="closePath()">Close Path (Start New Window)</button>
+        <button onclick="clearAll()">Clear All</button>
+        <button onclick="toggleReference()" style="margin-left:auto; background:#333;">Toggle Original Mask</button>
+    </div>
+
+    <div class="container" id="editorArea">
+        <img src="/assets/porsche tint visualiser.webp" class="bg-image">
+        <svg viewBox="0 0 800 450" id="drawingSvg">
+            <!-- Existing path to show as reference initially -->
+            <path id="existingPath"
+                d="M280,210 C310,180 400,165 460,162 L515,165 L515,212 C440,215 350,215 280,210 Z M525,166 L580,175 C610,185 625,195 635,210 L525,215 Z"
+                fill="none" stroke="#ff0044" stroke-width="2" stroke-dasharray="4,4" />
+            <path id="currentPath" d="" fill="rgba(79, 172, 254, 0.4)" stroke="#4facfe" stroke-width="2" />
+        </svg>
+    </div>
+
+    <h3 style="margin-bottom: 10px;">Generated Path Data:</h3>
+    <textarea id="output" readonly placeholder="Your new mask code will appear here..."></textarea>
+
+    <script>
+        const container = document.getElementById('editorArea');
+        const currentPathEl = document.getElementById('currentPath');
+        const outputEl = document.getElementById('output');
+        const referencePathEl = document.getElementById('existingPath');
+
+        let subpaths = [[]];
+        let currentSubpathIndex = 0;
+
+        function updateSvg() {
+            let d = '';
+            for (let i = 0; i < subpaths.length; i++) {
+                const points = subpaths[i];
+                if (points.length === 0) continue;
+
+                d += `M${points[0].x},${points[0].y} `;
+                for (let j = 1; j < points.length; j++) {
+                    d += `L${points[j].x},${points[j].y} `;
+                }
+                if (points.isClosed) {
+                    d += 'Z ';
+                }
+            }
+            d = d.trim();
+            currentPathEl.setAttribute('d', d);
+            outputEl.value = d;
+        }
+
+        container.addEventListener('click', (e) => {
+            const rect = container.getBoundingClientRect();
+            // Map strictly to 800x450
+            const x = Math.round((e.clientX - rect.left) / rect.width * 800);
+            const y = Math.round((e.clientY - rect.top) / rect.height * 450);
+
+            if (subpaths[currentSubpathIndex].isClosed) {
+                currentSubpathIndex++;
+                subpaths.push([]);
+            }
+
+            subpaths[currentSubpathIndex].push({ x, y });
+            updateSvg();
+            referencePathEl.style.display = 'none'; // Hide reference as soon as they start
+        });
+
+        function closePath() {
+            if (subpaths[currentSubpathIndex].length > 2) {
+                subpaths[currentSubpathIndex].isClosed = true;
+                currentSubpathIndex++;
+                subpaths.push([]);
+                updateSvg();
+            } else if (subpaths[currentSubpathIndex].length > 0) {
+                alert("Need at least 3 points to close a shape!");
+            }
+        }
+
+        function undo() {
+            if (subpaths[currentSubpathIndex].length > 0) {
+                subpaths[currentSubpathIndex].pop();
+            } else if (currentSubpathIndex > 0) {
+                subpaths.pop();
+                currentSubpathIndex--;
+                subpaths[currentSubpathIndex].isClosed = false;
+            }
+            updateSvg();
+        }
+
+        function clearAll() {
+            subpaths = [[]];
+            currentSubpathIndex = 0;
+            updateSvg();
+            referencePathEl.style.display = 'block';
+        }
+
+        function toggleReference() {
+            referencePathEl.style.display = referencePathEl.style.display === 'none' ? 'block' : 'none';
+        }
+    </script>
+</body>
+
+</html>

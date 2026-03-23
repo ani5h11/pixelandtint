@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 import { Eye, EyeOff, Info } from 'lucide-react';
 
+// You can edit this path if the mask shape needs adjustment.
+// Traced on a 800x450 canvas.
+export const WINDOW_MASK_PATH = "M378,169 L377,169 L388,185 L389,184 L427,184 L483,181 L492,148 L453,144 L440,145 L428,146 L415,148 L406,150 L398,154 L391,158 L382,163 L377,168 Z M495,149 L496,149 L488,181 L573,175 L571,170 L565,166 L553,162 L533,156 L514,151 L497,148";
+
+const getMaskEncoded = (path: string) => {
+    const rawSvg = `<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg"><path d="${path}" fill="black" /></svg>`;
+    return `url('data:image/svg+xml,${encodeURIComponent(rawSvg)}')`;
+};
+
 const DARKNESS_LEVELS = [
     {
         vlt: 35,
@@ -55,7 +64,7 @@ const TintDarknessVisualizer: React.FC = () => {
                                     key={level.vlt}
                                     onClick={() => setSelectedVlt(level.vlt)}
                                     className={`group relative flex flex-col lg:flex-row items-center justify-center lg:justify-between p-3 lg:p-6 rounded-xl lg:rounded-2xl border-2 transition-all duration-500 overflow-hidden ${selectedVlt === level.vlt
-                                        ? 'bg-brightBlue border-navy/20 text-white shadow-2xl scale-[1.02]'
+                                        ? 'bg-navy/90 border-navy/70 text-white shadow-2xl scale-[1.02]'
                                         : 'bg-white border-navy/5 text-navy hover:border-navy/20'
                                         }`}
                                 >
@@ -102,14 +111,20 @@ const TintDarknessVisualizer: React.FC = () => {
 
                     {/* Right Side: Visualizer */}
                     <div className="w-full lg:w-7/12 flex flex-col gap-6">
-                        <div className="relative aspect-[16/9] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-navy/5">
+                        <div className="relative aspect-[16/9] rounded-[2rem] lg:rounded-[3rem] overflow-hidden shadow-2xl border-4 border-navy/5 bg-gray-200">
                             {/* Daytime Road Background */}
                             <img
-                                src="/assets/launceston.webp"
-                                alt="Scenic road background"
+                                src="/assets/porsche tint visualiser.webp"
+                                alt="Porsche 911 tint visualizer"
                                 loading="lazy"
                                 className="absolute inset-0 w-full h-full object-cover"
                             />
+
+                            {/* Brand Overlay */}
+                            <div className="absolute top-6 left-6 md:top-8 md:left-8 z-30 flex items-center gap-3 bg-navy/20 backdrop-blur-sm py-2 px-4 rounded-full border border-white/10">
+                                <img src="/assets/mainLogo.webp" alt="Pixel & Tint Logo" className="h-5 md:h-6 w-auto" />
+                                <span className="text-white font-black tracking-[0.2em] uppercase text-xs md:text-sm">Pixel & Tint</span>
+                            </div>
 
                             {/* Car Window Overlay (Static Structure) */}
                             <div className="absolute inset-0 z-20 pointer-events-none">
@@ -118,25 +133,25 @@ const TintDarknessVisualizer: React.FC = () => {
                                         <mask id="windowMask">
                                             <rect x="0" y="0" width="800" height="450" fill="white" />
                                             {/* Dynamic window area that gets tinted */}
-                                            <path d="M100,50 L700,50 Q750,50 750,100 L750,350 Q750,400 700,400 L100,400 Q50,400 50,350 L50,100 Q50,50 100,50 Z" fill="black" />
+                                            <path d={WINDOW_MASK_PATH} fill="black" />
                                         </mask>
                                     </defs>
                                     {/* The Frame of the window */}
-                                    <path d="M100,50 L700,50 Q750,50 750,100 L750,350 Q750,400 700,400 L100,400 Q50,400 50,350 L50,100 Q50,50 100,50 Z"
+                                    <path d={WINDOW_MASK_PATH}
                                         fill="none"
-                                        stroke="#0a192f"
-                                        strokeWidth="12"
+                                        stroke="#131a23ff"
+                                        strokeWidth="1"
                                     />
                                 </svg>
                             </div>
 
                             {/* The Dynamic Tint Layer */}
                             <div
-                                className="absolute inset-x-[50px] inset-y-[50px] z-10 transition-all duration-1000 ease-in-out"
+                                className="absolute inset-0 z-10 transition-all duration-1000 ease-in-out"
                                 style={{
                                     backgroundColor: 'rgba(10, 25, 47, ' + selectedData.opacity + ')',
-                                    maskImage: 'url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgODAwIDQ1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwLDUwIEw3MDAsNTAgUTc1MCw1MCA3NTAsMTAwIEw3NTAsMzUwIEE3NTAsNDAwIDcwMCw0MDAgTDEwMCw0MDAgUTUwLDQwMCA1MCwzNTAgTDUwLDEwMCBRNTAsNTAgMTAwLDUwIFoiIGZpbGw9ImJsYWNrIiAvPjwvc3ZnPg==")',
-                                    WebkitMaskImage: 'url("data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgODAwIDQ1MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cGF0aCBkPSJNMTAwLDUwIEw3MDAsNTAgUTc1MCw1MCA3NTAsMTAwIEw3NTAsMzUwIEA3NTAsNDAwIDcwMCw0MDAgTDEwMCw0MDAgUTUwLDQwMCA1MCwzNTAgTDUwLDEwMCBRNTAsNTAgMTAwLDUwIFoiIGZpbGw9ImJsYWNrIiAvPjwvc3ZnPg==")',
+                                    maskImage: getMaskEncoded(WINDOW_MASK_PATH),
+                                    WebkitMaskImage: getMaskEncoded(WINDOW_MASK_PATH),
                                     maskSize: '100% 100%',
                                     WebkitMaskSize: '100% 100%'
                                 }}
