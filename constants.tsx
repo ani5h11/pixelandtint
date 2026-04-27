@@ -11,7 +11,13 @@ export const SERVICES: ServiceCardProps[] = [
   },
   {
     title: 'Residential Tinting',
-    description: 'Keep your home cool in summer and warm in winter. Enhance privacy without sacrificing your view.',
+    description: (
+      <>
+        Keep your home cool in summer and warm in winter. Enhance privacy without sacrificing your view.
+        <br />
+        <span className="text-brightBlue font-bold text-xl">Coming soon...</span>
+      </>
+    ),
     icon: <Home className="w-8 h-8 text-brightBlue" />,
     imageUrl: '/assets/window.avif'
   },

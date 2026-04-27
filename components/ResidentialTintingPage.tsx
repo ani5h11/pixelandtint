@@ -100,10 +100,10 @@ const ResidentialTintingPage: React.FC = () => {
                     </p>
                     <div className="flex flex-wrap gap-4">
                         <Link
-                            to="/contact"
+                            // to="/contact"
                             className="px-8 py-4 bg-brightBlue hover:bg-lightAqua text-white hover:text-navy rounded-full text-xs font-black uppercase tracking-widest transition-all shadow-xl active:scale-95"
                         >
-                            Get a Free Quote
+                            Coming Soon...
                         </Link>
                         <a
                             href="#benefits"

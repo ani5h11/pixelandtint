@@ -122,7 +122,7 @@ const Navbar: React.FC = () => {
             <a
               href="/#benefits"
               onClick={(e) => scrollTo(e, 'benefits')}
-              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '02' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '02' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/80 hover:text-navy hover:bg-navy/15'
                 }`}
             >
               Benefits
@@ -130,7 +130,7 @@ const Navbar: React.FC = () => {
             <a
               href="/#types"
               onClick={(e) => scrollTo(e, 'types')}
-              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '03' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '03' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/80 hover:text-navy hover:bg-navy/15'
                 }`}
             >
               Tech
@@ -138,7 +138,7 @@ const Navbar: React.FC = () => {
             <a
               href="/#about"
               onClick={(e) => scrollTo(e, 'about')}
-              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${activeSection === '04' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${activeSection === '04' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/80 hover:text-navy hover:bg-navy/15'
                 }`}
             >
               Process
@@ -146,7 +146,7 @@ const Navbar: React.FC = () => {
             <a
               href="/#services"
               onClick={(e) => scrollTo(e, 'services')}
-              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '05' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '05' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/80 hover:text-navy hover:bg-navy/15'
                 }`}
             >
               Services
@@ -154,14 +154,14 @@ const Navbar: React.FC = () => {
             <a
               href="/#testimonials"
               onClick={(e) => scrollTo(e, 'testimonials')}
-              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '06' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${isHomePage && activeSection === '06' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/80 hover:text-navy hover:bg-navy/15'
                 }`}
             >
               Reviews
             </a>
             <Link
               to="/contact"
-              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${location.pathname === '/contact' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/40 hover:text-navy hover:bg-navy/5'
+              className={`px-5 py-2.5 text-[9px] font-black uppercase tracking-[0.2em] transition-all rounded-lg ${location.pathname === '/contact' ? 'text-brightBlue bg-brightBlue/5' : 'text-navy/80 hover:text-navy hover:bg-navy/15'
                 }`}
             >
               Contact
